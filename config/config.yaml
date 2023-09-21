@@ -7,7 +7,7 @@ mysql:
     port: 3306
     username: root
 
-log :
+log:
     enable: true
     level : info
     name: data/log/log.log
@@ -15,3 +15,9 @@ log :
     "max_backups": 5
     "max_age": 28
     "compress": false
+
+redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    db: 3

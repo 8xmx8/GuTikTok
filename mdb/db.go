@@ -3,8 +3,10 @@ package mdb
 import (
 	"GuTikTok/config"
 	"GuTikTok/mdb/model"
+	"GuTikTok/mdb/redisdb"
 	"fmt"
 	"github.com/natefinch/lumberjack"
+	"github.com/redis/go-redis/v9"
 	log "github.com/sirupsen/logrus"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
@@ -16,7 +18,10 @@ import (
 	"time"
 )
 
-var DB *gorm.DB
+var (
+	DB  *gorm.DB      //操作数据库入口
+	rdb *redis.Client //操作redis入口
+)
 
 func InitLog() {
 
@@ -80,4 +85,15 @@ func InitDb() {
 	}
 	model.Init(DB)
 	log.Info("初始化 Database 成功!")
+}
+func InitRdb() {
+	log.Info("开始初始化 Redis 服务!")
+	rconf := config.Conf.Redis
+	rdb = redis.NewClient(&redis.Options{
+		Addr:     fmt.Sprintf("%s:%d", rconf.Host, rconf.Port),
+		Password: rconf.Password,
+		DB:       rconf.Db,
+	})
+	redisdb.InitRdb(rdb)
+	log.Info("初始化 Redis 成功!")
 }

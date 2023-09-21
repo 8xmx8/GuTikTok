@@ -12,6 +12,7 @@ type Config struct {
 	JwtSecret string `yaml:"jwt_secret"`
 	MySQL     *Mysql `yaml:"mysql"`
 	Log       *Log   `yaml:"log"`
+	Redis     *Redis `yaml:"redis"`
 }
 type Mysql struct {
 	Host     string `yaml:"host"`
@@ -29,6 +30,12 @@ type Log struct {
 	MaxBackups int    `yaml:"max_backups"` // 日志最大备份数
 	MaxAge     int    `yaml:"max_age"`     // 日志最长时间
 	Compress   bool   `yaml:"compress"`    // 日志是否压缩
+}
+type Redis struct {
+	Host     string `yaml:"host"`
+	Port     int    `yaml:"port"`
+	Password string `yaml:"password"`
+	Db       int    `yaml:"db"`
 }
 
 func InitConf() {

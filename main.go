@@ -9,4 +9,5 @@ func main() {
 	config.InitConf()
 	mdb.InitLog()
 	mdb.InitDb()
+	mdb.InitRdb()
 }

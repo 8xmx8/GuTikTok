@@ -22,7 +22,7 @@ func GetToken(id int64, username string) (string, error) {
 		username,
 		jwt.RegisteredClaims{
 			ExpiresAt: jwt.NewNumericDate(expireTime),
-			Issuer:    "ByteHunters",
+			Issuer:    "GuTikTok",
 		},
 	}
 	reqClaim := jwt.NewWithClaims(jwt.SigningMethodHS256, SetClaims)
