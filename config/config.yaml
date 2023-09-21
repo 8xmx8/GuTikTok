@@ -6,3 +6,12 @@ mysql:
     password: root
     port: 3306
     username: root
+
+log :
+    enable: true
+    level : info
+    name: data/log/log.log
+    max_size: 10
+    "max_backups": 5
+    "max_age": 28
+    "compress": false
