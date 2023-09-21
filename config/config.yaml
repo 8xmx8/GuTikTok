@@ -1,0 +1,8 @@
+jwtsecret: XFjLpUqzPbbSUHlLw
+mysql:
+    charset: utf8mb4
+    database: gutiktok
+    host: 127.0.0.1
+    password: root
+    port: 3306
+    username: root
