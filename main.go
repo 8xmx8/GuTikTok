@@ -1,9 +1,12 @@
 package main
 
-import "GuTikTok/mdb"
+import (
+	"GuTikTok/mdb"
+	"fmt"
+)
 
 func main() {
-	mdb.InitLog()
-	mdb.InitDb()
-	mdb.InitRdb()
+	db := mdb.DB
+	rdb := mdb.Rdb
+	fmt.Println(db, rdb)
 }
