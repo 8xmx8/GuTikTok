@@ -60,6 +60,7 @@ func InitDb() {
 
 	logLevel := logger.Info
 	DB, err = gorm.Open(dialector, &gorm.Config{
+		PrepareStmt: true, //启用预编译sql
 		//日志配置后期要更改
 		Logger: logger.New(
 			stdlog.New(log.StandardLogger().Out, "\r\n", stdlog.LstdFlags),

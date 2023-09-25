@@ -38,7 +38,7 @@ type Redis struct {
 	Db       int    `yaml:"db"`
 }
 
-func InitConf() {
+func init() {
 	workDir, _ := os.Getwd()
 	viper.SetConfigName("config")
 	viper.SetConfigType("yaml")
