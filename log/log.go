@@ -2,6 +2,7 @@ package log
 
 import (
 	"GuTikTok/config"
+	"fmt"
 	"github.com/natefinch/lumberjack"
 	log "github.com/sirupsen/logrus"
 	"io"
@@ -12,8 +13,11 @@ func init() {
 
 	logConf := config.Conf.Log
 	if logConf.Enable {
-
-		log.SetLevel(log.InfoLevel)
+		level, err := log.ParseLevel(logConf.Level)
+		if err != nil {
+			panic(fmt.Sprintf("日志级别不正确，可用: [panic,fatal,error,warn,info,debug,trace],%v", err))
+		}
+		log.SetLevel(level)
 		log.SetReportCaller(true)
 		var w io.Writer = &lumberjack.Logger{
 			Filename:   logConf.Name,

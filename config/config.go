@@ -9,12 +9,13 @@ import (
 var Conf *Config
 
 type Config struct {
-	JwtSecret string `yaml:"jwt_secret"`
+	JwtSecret string `yaml:"JwtSecret"`
 	MySQL     *Mysql `yaml:"mysql"`
 	Log       *Log   `yaml:"log"`
 	Redis     *Redis `yaml:"redis"`
 }
 type Mysql struct {
+	LogLevel string `yaml:"logLevel"`
 	Host     string `yaml:"host"`
 	Port     string `yaml:"port"`
 	Database string `yaml:"database"`
@@ -23,13 +24,13 @@ type Mysql struct {
 	Charset  string `yaml:"charset"`
 }
 type Log struct {
-	Enable     bool   `yaml:"enable"`      // 是否启用日志
-	Level      string `yaml:"level"`       // 日志等级，可用 panic,fatal,error,warn,info,debug,trace
-	Name       string `yaml:"name"`        // 日志文件名
-	MaxSize    int    `yaml:"max_size"`    // 日志最大大小
-	MaxBackups int    `yaml:"max_backups"` // 日志最大备份数
-	MaxAge     int    `yaml:"max_age"`     // 日志最长时间
-	Compress   bool   `yaml:"compress"`    // 日志是否压缩
+	Enable     bool   `yaml:"enable"`     // 是否启用日志
+	Level      string `yaml:"level"`      // 日志等级，可用 panic,fatal,error,warn,info,debug,trace
+	Name       string `yaml:"name"`       // 日志文件名
+	MaxSize    int    `yaml:"MaxSize"`    // 日志最大大小
+	MaxBackups int    `yaml:"MaxBackups"` // 日志最大备份数
+	MaxAge     int    `yaml:"MaxAge"`     // 日志最长时间
+	Compress   bool   `yaml:"compress"`   // 日志是否压缩
 }
 type Redis struct {
 	Host     string `yaml:"host"`

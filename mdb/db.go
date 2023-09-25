@@ -10,6 +10,7 @@ import (
 	"gorm.io/gorm/logger"
 	"gorm.io/gorm/schema"
 	stdlog "log"
+	"strings"
 	"time"
 )
 
@@ -17,13 +18,26 @@ var DB *gorm.DB //操作数据库入口
 
 func init() {
 	var dialector gorm.Dialector
+	var logLevel logger.LogLevel
 	var err error
 
 	database := config.Conf.MySQL
 	dialector = mysql.Open(fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=%s&parseTime=True&loc=Local",
 		database.UserName, database.Password, database.Host, database.Port, database.Database, database.Charset))
 
-	logLevel := logger.Info
+	switch strings.ToLower(database.LogLevel) {
+	case "silent":
+		logLevel = logger.Silent
+	case "error":
+		logLevel = logger.Error
+	case "warn":
+		logLevel = logger.Warn
+	case "info":
+		logLevel = logger.Info
+	default:
+		log.Fatalf("数据库日志级别不正确，可用: [silent,error,warn,info]")
+	}
+
 	DB, err = gorm.Open(dialector, &gorm.Config{
 		PrepareStmt: true, //启用预编译sql
 		//日志配置后期要更改

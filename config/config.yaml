@@ -1,5 +1,6 @@
 jwtsecret: XFjLpUqzPbbSUHlLw
 mysql:
+    logLevel: info
     charset: utf8mb4
     database: gutiktok
     host: 127.0.0.1
@@ -11,10 +12,10 @@ log:
     enable: true
     level : info
     name: data/log/log.log
-    max_size: 10
-    "max_backups": 5
-    "max_age": 28
-    "compress": false
+    MaxSize: 10
+    MaxBackups: 5
+    MaxAge: 28
+    compress: false
 
 redis:
     host: 127.0.0.1
