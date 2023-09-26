@@ -1,0 +1,57 @@
+syntax = "proto3";
+package rpc.user;
+option go_package = "./src/rpc/user";
+
+message LoginRequest {
+  string username = 1; // 登录用户名
+  string password = 2; // 登录密码
+}
+
+message LoginResponse {
+  int32 status_code = 1; // 状态码，0-成功，其他值-失败
+  string status_msg = 2; // 返回状态描述
+  uint32 user_id = 3; // 用户id
+  string token = 4; // 用户鉴权token
+}
+
+message RegisterRequest {
+  string username = 1; // 注册用户名，最长32个字符
+  string password = 2; // 密码，最长32个字符
+}
+
+message RegisterResponse {
+  int32 status_code = 1; // 状态码，0-成功，其他值-失败
+  string status_msg = 2; // 返回状态描述
+  uint32 user_id = 3; // 用户id
+  string token = 4; // 用户鉴权token
+}
+message User {
+  uint32 id = 1; // 用户id
+  string name = 2; // 用户名称
+  optional uint32 follow_count = 3; // 关注总数
+  optional uint32 follower_count = 4; // 粉丝总数
+  bool is_follow = 5; // true-已关注，false-未关注
+  optional string avatar = 6; //用户头像
+  optional string background_image = 7; //用户个人页顶部大图
+  optional string signature = 8; //个人简介
+  optional uint32 total_favorited = 9; //获赞数量
+  optional uint32 work_count = 10; //作品数量
+  optional uint32 favorite_count = 11; //点赞数量
+}
+message UserRequest {
+  uint32 user_id = 1; // 用户id
+  uint32 actor_id = 2; // 发送请求的用户的id
+}
+
+message UserResponse {
+  int32 status_code = 1; // 状态码，0-成功，其他值-失败
+  string status_msg = 2; // 返回状态描述
+  User user = 3; // 用户信息
+}
+service UserService {
+  rpc Register (RegisterRequest) returns (RegisterResponse);
+
+  rpc Login (LoginRequest) returns (LoginResponse);
+
+  rpc GetUserInfo(UserRequest) returns(UserResponse);
+}
