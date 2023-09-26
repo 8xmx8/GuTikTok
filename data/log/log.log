@@ -6635,3 +6635,4 @@
 [36mINFO[0m[2023-09-25 14:23:14]D:/GoCode/GuTikTok/mdb/redis.go:18 GuTikTok/mdb.InitRdb() 开始初始化 Redis 服务!                              
 [36mINFO[0m[2023-09-25 14:23:14]D:/GoCode/GuTikTok/mdb/redis.go:51 GuTikTok/mdb.InitRdb() 初始化 Redis 成功!                                
 [36mINFO[0m[2023-09-26 21:05:43]D:/GoCode/GuTikTok/logger/log.go:44 GuTikTok/logger.init.0() 初始化 logrus 成功!                               
+[36mINFO[0m[2023-09-26 21:24:21]D:/GoCode/GuTikTok/logging/log.go:44 GuTikTok/logging.init.0() 初始化 logrus 成功!                               

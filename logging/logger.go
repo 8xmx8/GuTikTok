@@ -1,4 +1,4 @@
-package logger
+package logging
 
 import (
 	"GuTikTok/config"
@@ -18,7 +18,7 @@ var hostname string
 // 初始化函数，在包被导入时执行
 func init() {
 	// 获取主机名
-	hostname, _ = os.Hostname()
+	hostname, _ = os.Hostname() //acer_yjy
 
 	// 根据配置的日志级别设置日志记录器的级别
 	switch strings.ToUpper(config.Conf.Log.Level) {
@@ -44,6 +44,21 @@ func init() {
 	}
 
 	// 打开日志文件，并设置日志记录器的格式和输出位置
+	/*
+		O_RDONLY 打开只读文件
+		O_WRONLY 打开只写文件
+		O_RDWR 打开既可以读取又可以写入文件
+		O_APPEND 写入文件时将数据追加到文件尾部
+		O_CREATE 如果文件不存在，则创建一个新的文件
+		O_TRUNC 表示如果文件存在，则截断文件到零长度
+		0o666：表示文件权限的八进制数。0o666 表示文件所有者、所属组和其他用户都具有读写权限。
+	*/
+	/*
+		在八进制表示法中，0o 前缀表示八进制数。数字 766 对应了文件权限 rw-rw-rw-。
+		7 表示所有者（owner）具有读取、写入和执行权限。
+		6 表示所属组（group）具有读取和写入权限。
+		6 表示其他用户（others）具有读取和写入权限。
+	*/
 	f, err := os.OpenFile(filePath, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
 	if err != nil {
 		panic(err)
