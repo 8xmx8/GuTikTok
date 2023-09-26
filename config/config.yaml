@@ -1,4 +1,5 @@
 jwtsecret: XFjLpUqzPbbSUHlLw
+loggerWithTraceState: enable
 mysql:
     logLevel: info
     charset: utf8mb4

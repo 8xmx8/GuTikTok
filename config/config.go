@@ -9,10 +9,11 @@ import (
 var Conf *Config
 
 type Config struct {
-	JwtSecret string `yaml:"JwtSecret"`
-	MySQL     *Mysql `yaml:"mysql"`
-	Log       *Log   `yaml:"log"`
-	Redis     *Redis `yaml:"redis"`
+	JwtSecret            string `yaml:"JwtSecret"`
+	LoggerWithTraceState string `yaml:"loggerWithTraceState"`
+	MySQL                *Mysql `yaml:"mysql"`
+	Log                  *Log   `yaml:"log"`
+	Redis                *Redis `yaml:"redis"`
 }
 type Mysql struct {
 	LogLevel string `yaml:"logLevel"`
