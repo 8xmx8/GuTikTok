@@ -17,6 +17,7 @@ var hostname string
 
 // 初始化函数，在包被导入时执行
 func init() {
+	InitDBLog()
 	// 获取主机名
 	hostname, _ = os.Hostname() //acer_yjy
 

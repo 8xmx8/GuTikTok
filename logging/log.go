@@ -9,7 +9,7 @@ import (
 	"os"
 )
 
-func init() {
+func InitDBLog() {
 
 	logConf := config.Conf.Log
 	if logConf.Enable {
