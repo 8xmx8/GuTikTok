@@ -103,7 +103,7 @@ func (t logTraceHook) Fire(entry *log.Entry) error {
 		entry.Data["span_id"] = sCtx.SpanID().String()
 	}
 
-	if config.Conf.LoggerWithTraceState == "enable" {
+	if config.Conf.Log.Enable {
 		attrs := make([]attribute.KeyValue, 0)
 		logSeverityKey := attribute.Key("log.severity")
 		logMessageKey := attribute.Key("log.message")
@@ -143,5 +143,5 @@ func SetSpanErrorWithDesc(span trace.Span, err error, desc string) {
 }
 func SetSpanWithHostname(span trace.Span) {
 	span.SetAttributes(attribute.String("hostname", hostname))
-	span.SetAttributes(attribute.String("podIP", "localhost"))
+	span.SetAttributes(attribute.String("podIP", config.Conf.Server.Address))
 }

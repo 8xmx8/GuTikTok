@@ -1,5 +1,6 @@
 jwtsecret: XFjLpUqzPbbSUHlLw
-loggerWithTraceState: enable
+server:
+    address: 127.0.0.1
 mysql:
     logLevel: info
     charset: utf8mb4
@@ -12,6 +13,7 @@ mysql:
 log:
     enable: true
     level : info
+    loggerWithTraceState: enable
     name: data/log/log.log
     MaxSize: 10
     MaxBackups: 5
