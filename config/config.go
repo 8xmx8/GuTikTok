@@ -2,6 +2,7 @@ package config
 
 import (
 	"GuTikTok/utils"
+	log "github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 	"os"
 )
@@ -51,11 +52,11 @@ func init() {
 	viper.AddConfigPath(workDir + "/config")
 	err := viper.ReadInConfig()
 	if err != nil {
-
+		log.Fatalf("读取配置信息错误:{%v}", err)
 	}
 	err = viper.Unmarshal(&Conf)
 	if err != nil {
-
+		log.Fatalf("配置信息解析错误:{%v}", err)
 	}
 	jwt := Conf.JwtSecret
 	if jwt == "" {
