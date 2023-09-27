@@ -2,33 +2,53 @@ package main
 
 import (
 	"GuTikTok/config"
+	"GuTikTok/utils/logging"
+	"GuTikTok/utils/tracing"
 	"context"
 	"errors"
-	"fmt"
 	"github.com/gin-gonic/gin"
 	log "github.com/sirupsen/logrus"
 	"net/http"
 	"os"
 	"os/signal"
-	"sync"
 	"syscall"
 	"time"
 )
 
 func main() {
-	g := gin.Default()
 
+	// Set Trace Provider
+	tp, err := tracing.SetTraceProvider(config.WebServiceName)
+
+	if err != nil {
+		logging.Logger.WithFields(log.Fields{
+			"err": err,
+		}).Panicf("Error to set the trace")
+	}
+	defer func() {
+		if err := tp.Shutdown(context.Background()); err != nil {
+			logging.Logger.WithFields(log.Fields{
+				"err": err,
+			}).Errorf("Error to set the trace")
+		}
+	}()
+
+	g := gin.Default()
 	//url
 
-	base := fmt.Sprintf("%s:%d", config.Conf.Server.Address, config.Conf.Server.Port) //127.0.0.1:23927
+	g.GET("ping", func(c *gin.Context) {
+		c.String(http.StatusOK, "pong")
+	})
+
+	// Run Server
+	RunServer(g)
+
+}
+func RunServer(g *gin.Engine) {
+	base := config.Conf.Server.Address + config.WebServiceAddr
 	log.Infof("启动服务器 @ %s", base)
 	srv := &http.Server{Addr: base, Handler: g}
-
-	var wg sync.WaitGroup
-	wg.Add(1)
-
 	go func() {
-		defer wg.Done()
 		var err error
 		if config.Conf.Server.Https {
 			err = srv.ListenAndServeTLS(config.Conf.Server.CertFile, config.Conf.Server.KeyFile)
@@ -39,8 +59,6 @@ func main() {
 			log.Fatalf("无法启动: %s", err.Error())
 		}
 	}()
-
-	wg.Wait()
 
 	// 等待中断信号以优雅地关闭服务器（设置 5 秒的超时时间）
 	quit := make(chan os.Signal)

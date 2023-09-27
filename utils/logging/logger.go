@@ -3,45 +3,53 @@ package logging
 import (
 	"GuTikTok/config"
 	"fmt"
+	"github.com/natefinch/lumberjack"
 	log "github.com/sirupsen/logrus"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/codes"
 	"go.opentelemetry.io/otel/trace"
 	"io"
 	"os"
-	"path"
-	"strings"
 )
 
 var hostname string
 
 // 初始化函数，在包被导入时执行
 func init() {
-	InitDBLog()
+
 	// 获取主机名
 	hostname, _ = os.Hostname() //acer_yjy
 
-	// 根据配置的日志级别设置日志记录器的级别
-	switch strings.ToUpper(config.Conf.Log.Level) {
-	case "DEBUG":
-		log.SetLevel(log.DebugLevel)
-	case "INFO":
-		log.SetLevel(log.InfoLevel)
-	case "WARN", "WARNING":
-		log.SetLevel(log.WarnLevel)
-	case "ERROR":
-		log.SetLevel(log.ErrorLevel)
-	case "FATAL":
-		log.SetLevel(log.FatalLevel)
-	case "TRACE":
-		log.SetLevel(log.TraceLevel)
+	// 配置日志格式
+	formatter := log.TextFormatter{
+		ForceColors:               true,
+		EnvironmentOverrideColors: true,
+		TimestampFormat:           "2006-01-02 15:04:05",
+		FullTimestamp:             true,
+		DisableQuote:              true,
 	}
 
-	// 设置日志文件的路径和创建文件夹
-	filePath := path.Join("data", "log", "gutiktok.log")
-	dir := path.Dir(filePath)
-	if err := os.MkdirAll(dir, os.FileMode(0755)); err != nil {
-		panic(err)
+	log.SetFormatter(&formatter)
+	log.AddHook(logTraceHook{})
+
+	logConf := config.Conf.Log
+	if logConf.Enable {
+		level, err := log.ParseLevel(logConf.Level)
+		if err != nil {
+			panic(fmt.Sprintf("日志级别不正确，可用: [panic,fatal,error,warn,info,debug,trace],%v", err))
+		}
+		log.SetLevel(level)
+		log.SetReportCaller(true)
+		var w io.Writer = &lumberjack.Logger{
+			Filename:   logConf.Name,
+			MaxSize:    logConf.MaxSize,
+			MaxBackups: logConf.MaxBackups,
+			MaxAge:     logConf.MaxAge,
+			Compress:   logConf.Compress,
+		}
+		w = io.MultiWriter(os.Stdout, w)
+
+		log.SetOutput(w)
 	}
 
 	// 打开日志文件，并设置日志记录器的格式和输出位置
@@ -60,21 +68,14 @@ func init() {
 		6 表示所属组（group）具有读取和写入权限。
 		6 表示其他用户（others）具有读取和写入权限。
 	*/
-	f, err := os.OpenFile(filePath, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0644)
-	if err != nil {
-		panic(err)
-	}
-
-	log.SetFormatter(&log.JSONFormatter{})
-	log.AddHook(logTraceHook{})
-	log.SetOutput(io.MultiWriter(f, os.Stdout))
 
 	// 创建Logger实例，并设置预定义的字段值
 	Logger = log.WithFields(log.Fields{
-		"Tied":     "",
+		"Tied":     "NONE",
 		"Hostname": hostname,
-		"PodIP":    "",
+		"PodIP":    config.Conf.Server.Address,
 	})
+
 }
 
 // 自定义的logrus钩子实现，用于向日志条目添加OpenTelemetry跟踪信息

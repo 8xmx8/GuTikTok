@@ -17,6 +17,7 @@ import (
 var DB *gorm.DB //操作数据库入口
 
 func init() {
+	log.Info("开始初始化 Database !")
 	var dialector gorm.Dialector
 	var logLevel logger.LogLevel
 	var err error
