@@ -2,7 +2,6 @@ package binder
 
 import (
 	"errors"
-
 	"github.com/gin-gonic/gin"
 )
 
