@@ -10,18 +10,23 @@ import (
 var Conf *Config
 
 type Config struct {
-	JwtSecret string  `yaml:"JwtSecret"`
-	Server    *Server `yaml:"server"`
-	MySQL     *Mysql  `yaml:"mysql"`
-	Log       *Log    `yaml:"log"`
-	Redis     *Redis  `yaml:"redis"`
+	JwtSecret string   `yaml:"JwtSecret"`
+	Server    *Server  `yaml:"server"`
+	Tracers   *Tracers `yaml:"tracers"`
+	MySQL     *Mysql   `yaml:"mysql"`
+	Log       *Log     `yaml:"log"`
+	Redis     *Redis   `yaml:"redis"`
 }
 type Server struct {
-	Https    bool   `yaml:"https"` //是否启用https
+	IP       string `yaml:"IP"`
 	Address  string `yaml:"address"`
-	Port     uint   `yaml:"port"`
+	Https    bool   `yaml:"https"`    //是否启用https
 	CertFile string `yaml:"certFile"` // 证书路径
 	KeyFile  string `yaml:"keyFile"`  // 证书路径
+}
+type Tracers struct {
+	OtelState   string  `yaml:"OtelState"`   //diable->禁用OpenTelemetry跟踪功能
+	OtelSampler float64 `yaml:"OtelSampler"` //采样比例->0.01
 }
 type Mysql struct {
 	LogLevel string `yaml:"logLevel"`
@@ -35,7 +40,7 @@ type Mysql struct {
 type Log struct {
 	Enable               bool   `yaml:"enable"` // 是否启用日志
 	LoggerWithTraceState string `yaml:"loggerWithTraceState"`
-	Level                string `yaml:"level"`      // 日志等级，可用 panic,fatal,error,warn,info,debug,trace
+	Level                string `yaml:"info"`       // 日志等级，可用 panic,fatal,error,warn,info,debug,trace
 	Name                 string `yaml:"name"`       // 日志文件名
 	MaxSize              int    `yaml:"MaxSize"`    // 日志最大大小
 	MaxBackups           int    `yaml:"MaxBackups"` // 日志最大备份数

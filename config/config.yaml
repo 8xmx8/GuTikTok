@@ -1,10 +1,14 @@
 jwtsecret: XFjLpUqzPbbSUHlLw
 server:
-    https: false
+    IP: 127.0.0.1:8500
     address: 127.0.0.1
-    port: 23927
+    https: false
     certFile:
     keyFile:
+tracers:
+    OtelState: disable
+    addr: 127.0.0.1
+    OtelSampler: 0.01
 mysql:
     logLevel: info
     charset: utf8mb4
