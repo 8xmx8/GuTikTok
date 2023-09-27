@@ -1,6 +1,10 @@
 jwtsecret: XFjLpUqzPbbSUHlLw
 server:
+    https: false
     address: 127.0.0.1
+    port: 23927
+    certFile:
+    keyFile:
 mysql:
     logLevel: info
     charset: utf8mb4
