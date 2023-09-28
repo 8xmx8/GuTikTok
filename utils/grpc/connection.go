@@ -2,7 +2,7 @@ package grpc
 
 import (
 	"GuTikTok/config"
-	"GuTikTok/utils/logging"
+	"GuTikTok/logging"
 	"fmt"
 	"github.com/sirupsen/logrus"
 	"go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc"
@@ -19,7 +19,7 @@ func Connect(serviceName string) (conn *grpc.ClientConn) {
 		PermitWithoutStream: false,            // 即使没有活动的流，也发送ping
 	}
 	conn, err := grpc.Dial(
-		fmt.Sprintf("consul://%s/%s?wait=15s", config.Conf.Server.IP, ""+serviceName),
+		fmt.Sprintf("consul://%s/%s?wait=15s", config.Conf.Server.IP, config.Conf.Consul.ConsulAnonymityPrefix+serviceName),
 		grpc.WithTransportCredentials(insecure.NewCredentials()),
 		grpc.WithDefaultServiceConfig(`{"loadBalancingPolicy": "round_robin"}`),
 		grpc.WithUnaryInterceptor(otelgrpc.UnaryClientInterceptor()),
@@ -28,9 +28,9 @@ func Connect(serviceName string) (conn *grpc.ClientConn) {
 
 	if err != nil {
 		logging.Logger.WithFields(logrus.Fields{
-			"service": "" + serviceName,
+			"service": config.Conf.Consul.ConsulAnonymityPrefix + serviceName,
 			"err":     err,
-		}).Errorf("Cannot connect to %v service", "CONSUL_ANONYMITY_NAME"+serviceName)
+		}).Errorf("Cannot connect to %v service", config.Conf.Consul.ConsulAnonymityPrefix+serviceName)
 	}
 	return
 }

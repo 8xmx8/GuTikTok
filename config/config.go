@@ -12,6 +12,7 @@ var Conf *Config
 type Config struct {
 	JwtSecret string   `yaml:"JwtSecret"`
 	Server    *Server  `yaml:"server"`
+	Consul    *Consul  `yaml:"consul"`
 	Tracers   *Tracers `yaml:"tracers"`
 	MySQL     *Mysql   `yaml:"mysql"`
 	Log       *Log     `yaml:"log"`
@@ -23,6 +24,9 @@ type Server struct {
 	Https    bool   `yaml:"https"`    //是否启用https
 	CertFile string `yaml:"certFile"` // 证书路径
 	KeyFile  string `yaml:"keyFile"`  // 证书路径
+}
+type Consul struct {
+	ConsulAnonymityPrefix string `yaml:"consulAnonymityPrefix"`
 }
 type Tracers struct {
 	OtelState   string  `yaml:"OtelState"`   //diable->禁用OpenTelemetry跟踪功能

@@ -2,7 +2,7 @@ package consul
 
 import (
 	"GuTikTok/config"
-	"GuTikTok/utils/logging"
+	"GuTikTok/logging"
 	"fmt"
 	"github.com/google/uuid"
 	capi "github.com/hashicorp/consul/api"
@@ -29,7 +29,7 @@ func RegisterConsul(name string, port string) error {
 		"name": name,
 		"port": parsedPort,
 	}).Infof("Services Register Consul")
-	name = "CONSUL_ANONYMITY_NAME" + name
+	name = config.Conf.Consul.ConsulAnonymityPrefix + name
 
 	if err != nil {
 		return err

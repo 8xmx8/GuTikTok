@@ -2,7 +2,7 @@ package main
 
 import (
 	"GuTikTok/config"
-	"GuTikTok/utils/logging"
+	"GuTikTok/logging"
 	"GuTikTok/utils/tracing"
 	"context"
 	"errors"
