@@ -19,7 +19,11 @@ mysql:
     password: root
     port: 3306
     username: root
-
+MysqlReplica:
+    MySQLReplicaState: disable
+    MySQLReplicaAddress: 127.0.0.1,127.0.0.1
+    MySQLReplicaUsername: root
+    MySQLReplicaPassword: 123456
 log:
     enable: true
     level : info

@@ -9,6 +9,8 @@ import (
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 	"gorm.io/gorm/schema"
+	"gorm.io/plugin/dbresolver"
+	"gorm.io/plugin/opentelemetry/tracing"
 	stdlog "log"
 	"strings"
 	"time"
@@ -58,7 +60,50 @@ func init() {
 	})
 	if err != nil {
 		log.Fatalf("无法连接到数据库:%s", err.Error())
+	} else {
+		model.Init(DB)
 	}
-	model.Init(DB)
+
+	if config.Conf.MysqlReplica.MySQLReplicaState == "enable" {
+		var replicas []gorm.Dialector
+
+		for _, addr := range strings.Split(config.Conf.MysqlReplica.MySQLReplicaAddress, ",") {
+			// 这里可能需要根据 MySQL 连接字符串的格式进行修改，以适应您的实际情况
+			replicaDSN := fmt.Sprintf("%s:%s@tcp(%s)/%s",
+				config.Conf.MysqlReplica.MySQLReplicaUsername,
+				config.Conf.MysqlReplica.MySQLReplicaPassword,
+				addr,
+				config.Conf.MySQL.Database)
+
+			// 使用 MySQL 数据源名称连接到副本数据库
+			replicas = append(replicas, mysql.Open(replicaDSN))
+		}
+
+		// 注册数据库副本和负载均衡策略
+		err := DB.Use(dbresolver.Register(dbresolver.Config{
+			Replicas: replicas,
+			Policy:   dbresolver.RandomPolicy{},
+		}))
+		if err != nil {
+			panic(err)
+		}
+	}
+
+	// 获取数据库连接对象
+	sqlDB, err := DB.DB()
+	if err != nil {
+		panic(err)
+	}
+
+	// 配置数据库连接池的参数
+	sqlDB.SetMaxIdleConns(100)
+	sqlDB.SetMaxOpenConns(200)
+	sqlDB.SetConnMaxLifetime(24 * time.Hour)
+	sqlDB.SetConnMaxIdleTime(time.Hour)
+
+	// 添加追踪插件
+	if err := DB.Use(tracing.NewPlugin()); err != nil {
+		panic(err)
+	}
 	log.Info("初始化 Database 成功!")
 }

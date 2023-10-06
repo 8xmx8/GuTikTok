@@ -10,13 +10,20 @@ import (
 var Conf *Config
 
 type Config struct {
-	JwtSecret string   `yaml:"JwtSecret"`
-	Server    *Server  `yaml:"server"`
-	Consul    *Consul  `yaml:"consul"`
-	Tracers   *Tracers `yaml:"tracers"`
-	MySQL     *Mysql   `yaml:"mysql"`
-	Log       *Log     `yaml:"log"`
-	Redis     *Redis   `yaml:"redis"`
+	JwtSecret    string        `yaml:"JwtSecret"`
+	Server       *Server       `yaml:"server"`
+	Consul       *Consul       `yaml:"consul"`
+	Tracers      *Tracers      `yaml:"tracers"`
+	MySQL        *Mysql        `yaml:"mysql"`
+	MysqlReplica *MysqlReplica `yaml:"MysqlReplica"`
+	Log          *Log          `yaml:"log"`
+	Redis        *Redis        `yaml:"redis"`
+}
+type MysqlReplica struct {
+	MySQLReplicaState    string `yaml:"MySQLReplicaState"`
+	MySQLReplicaAddress  string `yaml:"MySQLReplicaAddress"`
+	MySQLReplicaUsername string `yaml:"MySQLReplicaUsername"`
+	MySQLReplicaPassword string `yaml:"MySQLReplicaPassword"`
 }
 type Server struct {
 	IP       string `yaml:"IP"`
