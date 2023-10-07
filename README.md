@@ -35,6 +35,7 @@
 - Redis [(缓存)]()
 - OpenTelemetry,VictoriaMetrics[(可观测性)]()
 - Ffmpeg[(视频处理)]()
+- Gorse[(推荐系统)]()
 #### 前端 Vue.js 3
 
 - Vite [(构建工具)](https://cn.vitejs.dev/)
