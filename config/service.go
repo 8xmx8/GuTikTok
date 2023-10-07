@@ -39,4 +39,4 @@ const MsgConsumer = "GuTikTok-MgsConsumer"
 
 const BloomRedisChannel = "GuTikTok-Bloom"
 
-const MaxVideoSize = 200 * 1024 * 1024
+const MaxVideoSize = 200 * 1024 * 1024 //上传视频最大200mb

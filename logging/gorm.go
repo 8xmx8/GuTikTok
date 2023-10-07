@@ -14,8 +14,7 @@ var errRecordNotFound = errors.New("record not found")
 type GormLogger struct{}
 
 func (g GormLogger) LogMode(_ logger.LogLevel) logger.Interface {
-	// We do not use this because Gorm will print different log according to log set.
-	// However, we just print to TRACE.
+	//我们不使用这段代码，因为Gorm会根据日志设置打印不同的日志。然而，我们只是打印到TRACE级别。
 	return g
 }
 
