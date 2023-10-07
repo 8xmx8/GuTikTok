@@ -3,11 +3,16 @@ package main
 import (
 	"GuTikTok/config"
 	"GuTikTok/logging"
+	"GuTikTok/src/extra/profiling"
+	"GuTikTok/src/web/middleware"
 	"GuTikTok/utils/tracing"
 	"context"
 	"errors"
+	"github.com/gin-contrib/gzip"
 	"github.com/gin-gonic/gin"
 	log "github.com/sirupsen/logrus"
+	ginprometheus "github.com/zsais/go-gin-prometheus"
+	"go.opentelemetry.io/contrib/instrumentation/github.com/gin-gonic/gin/otelgin"
 	"net/http"
 	"os"
 	"os/signal"
@@ -34,16 +39,28 @@ func main() {
 	}()
 
 	g := gin.Default()
-	//url
+	// Configure Prometheus
+	p := ginprometheus.NewPrometheus("GuTikTok-WebGateway")
+	p.Use(g)
+	// Configure Gzip
+	g.Use(gzip.Gzip(gzip.DefaultCompression))
+	// OpenTelemetry 监控
+	g.Use(otelgin.Middleware(config.WebServiceName))
+	// 令牌桶限流
+	g.Use(middleware.RateLimiterMiddleWare(time.Second, 1000, 1000))
+	// Configure Pyroscope 分析器
+	profiling.InitPyroscope("GuTikTok.GateWay")
 
+	// url
 	g.GET("ping", func(c *gin.Context) {
 		c.String(http.StatusOK, "pong")
 	})
+	g.Group("/user")
 
 	// Run Server
 	RunServer(g)
-
 }
+
 func RunServer(g *gin.Engine) {
 	base := config.Conf.Server.Address + config.WebServiceAddr
 	log.Infof("启动服务器 @ %s", base)
