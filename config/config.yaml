@@ -11,6 +11,9 @@ tracers:
     OtelState: disable
     addr: 127.0.0.1
     OtelSampler: 0.01
+pyroscope:
+    PyroscopeState: disable
+    PyroscopeAddr: 127.0.0.1
 mysql:
     logLevel: info
     charset: utf8mb4

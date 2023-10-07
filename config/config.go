@@ -18,6 +18,7 @@ type Config struct {
 	MysqlReplica *MysqlReplica `yaml:"MysqlReplica"`
 	Log          *Log          `yaml:"log"`
 	Redis        *Redis        `yaml:"redis"`
+	Pyroscope    *Pyroscope    `yaml:"pyroscope"`
 }
 type MysqlReplica struct {
 	MySQLReplicaState    string `yaml:"MySQLReplicaState"`
@@ -38,6 +39,10 @@ type Consul struct {
 type Tracers struct {
 	OtelState   string  `yaml:"OtelState"`   //diable->禁用OpenTelemetry跟踪功能
 	OtelSampler float64 `yaml:"OtelSampler"` //采样比例->0.01
+}
+type Pyroscope struct { //分析器
+	PyroscopeState string `yaml:"PyroscopeState"`
+	PyroscopeAddr  string `yaml:"PyroscopeAddr"`
 }
 type Mysql struct {
 	LogLevel string `yaml:"logLevel"`
