@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.31.0
 // 	protoc        v4.24.3
-// source: src/idl/auto.proto
+// source: src/idl/auth.proto
 
 package auth
 
@@ -32,7 +32,7 @@ type LoginRequest struct {
 func (x *LoginRequest) Reset() {
 	*x = LoginRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_src_idl_auto_proto_msgTypes[0]
+		mi := &file_src_idl_auth_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -45,7 +45,7 @@ func (x *LoginRequest) String() string {
 func (*LoginRequest) ProtoMessage() {}
 
 func (x *LoginRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_src_idl_auto_proto_msgTypes[0]
+	mi := &file_src_idl_auth_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -58,7 +58,7 @@ func (x *LoginRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LoginRequest.ProtoReflect.Descriptor instead.
 func (*LoginRequest) Descriptor() ([]byte, []int) {
-	return file_src_idl_auto_proto_rawDescGZIP(), []int{0}
+	return file_src_idl_auth_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *LoginRequest) GetUsername() string {
@@ -89,7 +89,7 @@ type LoginResponse struct {
 func (x *LoginResponse) Reset() {
 	*x = LoginResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_src_idl_auto_proto_msgTypes[1]
+		mi := &file_src_idl_auth_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -102,7 +102,7 @@ func (x *LoginResponse) String() string {
 func (*LoginResponse) ProtoMessage() {}
 
 func (x *LoginResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_src_idl_auto_proto_msgTypes[1]
+	mi := &file_src_idl_auth_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -115,7 +115,7 @@ func (x *LoginResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LoginResponse.ProtoReflect.Descriptor instead.
 func (*LoginResponse) Descriptor() ([]byte, []int) {
-	return file_src_idl_auto_proto_rawDescGZIP(), []int{1}
+	return file_src_idl_auth_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *LoginResponse) GetStatusCode() int32 {
@@ -158,7 +158,7 @@ type RegisterRequest struct {
 func (x *RegisterRequest) Reset() {
 	*x = RegisterRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_src_idl_auto_proto_msgTypes[2]
+		mi := &file_src_idl_auth_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -171,7 +171,7 @@ func (x *RegisterRequest) String() string {
 func (*RegisterRequest) ProtoMessage() {}
 
 func (x *RegisterRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_src_idl_auto_proto_msgTypes[2]
+	mi := &file_src_idl_auth_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -184,7 +184,7 @@ func (x *RegisterRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegisterRequest.ProtoReflect.Descriptor instead.
 func (*RegisterRequest) Descriptor() ([]byte, []int) {
-	return file_src_idl_auto_proto_rawDescGZIP(), []int{2}
+	return file_src_idl_auth_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *RegisterRequest) GetUsername() string {
@@ -215,7 +215,7 @@ type RegisterResponse struct {
 func (x *RegisterResponse) Reset() {
 	*x = RegisterResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_src_idl_auto_proto_msgTypes[3]
+		mi := &file_src_idl_auth_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -228,7 +228,7 @@ func (x *RegisterResponse) String() string {
 func (*RegisterResponse) ProtoMessage() {}
 
 func (x *RegisterResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_src_idl_auto_proto_msgTypes[3]
+	mi := &file_src_idl_auth_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -241,7 +241,7 @@ func (x *RegisterResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegisterResponse.ProtoReflect.Descriptor instead.
 func (*RegisterResponse) Descriptor() ([]byte, []int) {
-	return file_src_idl_auto_proto_rawDescGZIP(), []int{3}
+	return file_src_idl_auth_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *RegisterResponse) GetStatusCode() int32 {
@@ -283,7 +283,7 @@ type AuthenticateRequest struct {
 func (x *AuthenticateRequest) Reset() {
 	*x = AuthenticateRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_src_idl_auto_proto_msgTypes[4]
+		mi := &file_src_idl_auth_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -296,7 +296,7 @@ func (x *AuthenticateRequest) String() string {
 func (*AuthenticateRequest) ProtoMessage() {}
 
 func (x *AuthenticateRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_src_idl_auto_proto_msgTypes[4]
+	mi := &file_src_idl_auth_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -309,7 +309,7 @@ func (x *AuthenticateRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AuthenticateRequest.ProtoReflect.Descriptor instead.
 func (*AuthenticateRequest) Descriptor() ([]byte, []int) {
-	return file_src_idl_auto_proto_rawDescGZIP(), []int{4}
+	return file_src_idl_auth_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *AuthenticateRequest) GetToken() string {
@@ -332,7 +332,7 @@ type AuthenticateResponse struct {
 func (x *AuthenticateResponse) Reset() {
 	*x = AuthenticateResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_src_idl_auto_proto_msgTypes[5]
+		mi := &file_src_idl_auth_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -345,7 +345,7 @@ func (x *AuthenticateResponse) String() string {
 func (*AuthenticateResponse) ProtoMessage() {}
 
 func (x *AuthenticateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_src_idl_auto_proto_msgTypes[5]
+	mi := &file_src_idl_auth_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -358,7 +358,7 @@ func (x *AuthenticateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AuthenticateResponse.ProtoReflect.Descriptor instead.
 func (*AuthenticateResponse) Descriptor() ([]byte, []int) {
-	return file_src_idl_auto_proto_rawDescGZIP(), []int{5}
+	return file_src_idl_auth_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *AuthenticateResponse) GetStatusCode() int32 {
@@ -382,10 +382,10 @@ func (x *AuthenticateResponse) GetUserId() int64 {
 	return 0
 }
 
-var File_src_idl_auto_proto protoreflect.FileDescriptor
+var File_src_idl_auth_proto protoreflect.FileDescriptor
 
-var file_src_idl_auto_proto_rawDesc = []byte{
-	0x0a, 0x12, 0x73, 0x72, 0x63, 0x2f, 0x69, 0x64, 0x6c, 0x2f, 0x61, 0x75, 0x74, 0x6f, 0x2e, 0x70,
+var file_src_idl_auth_proto_rawDesc = []byte{
+	0x0a, 0x12, 0x73, 0x72, 0x63, 0x2f, 0x69, 0x64, 0x6c, 0x2f, 0x61, 0x75, 0x74, 0x68, 0x2e, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x12, 0x08, 0x72, 0x70, 0x63, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x22, 0x46,
 	0x0a, 0x0c, 0x4c, 0x6f, 0x67, 0x69, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1a,
 	0x0a, 0x08, 0x75, 0x73, 0x65, 0x72, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
@@ -441,19 +441,19 @@ var file_src_idl_auto_proto_rawDesc = []byte{
 }
 
 var (
-	file_src_idl_auto_proto_rawDescOnce sync.Once
-	file_src_idl_auto_proto_rawDescData = file_src_idl_auto_proto_rawDesc
+	file_src_idl_auth_proto_rawDescOnce sync.Once
+	file_src_idl_auth_proto_rawDescData = file_src_idl_auth_proto_rawDesc
 )
 
-func file_src_idl_auto_proto_rawDescGZIP() []byte {
-	file_src_idl_auto_proto_rawDescOnce.Do(func() {
-		file_src_idl_auto_proto_rawDescData = protoimpl.X.CompressGZIP(file_src_idl_auto_proto_rawDescData)
+func file_src_idl_auth_proto_rawDescGZIP() []byte {
+	file_src_idl_auth_proto_rawDescOnce.Do(func() {
+		file_src_idl_auth_proto_rawDescData = protoimpl.X.CompressGZIP(file_src_idl_auth_proto_rawDescData)
 	})
-	return file_src_idl_auto_proto_rawDescData
+	return file_src_idl_auth_proto_rawDescData
 }
 
-var file_src_idl_auto_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
-var file_src_idl_auto_proto_goTypes = []interface{}{
+var file_src_idl_auth_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_src_idl_auth_proto_goTypes = []interface{}{
 	(*LoginRequest)(nil),         // 0: rpc.auth.LoginRequest
 	(*LoginResponse)(nil),        // 1: rpc.auth.LoginResponse
 	(*RegisterRequest)(nil),      // 2: rpc.auth.RegisterRequest
@@ -461,7 +461,7 @@ var file_src_idl_auto_proto_goTypes = []interface{}{
 	(*AuthenticateRequest)(nil),  // 4: rpc.auth.AuthenticateRequest
 	(*AuthenticateResponse)(nil), // 5: rpc.auth.AuthenticateResponse
 }
-var file_src_idl_auto_proto_depIdxs = []int32{
+var file_src_idl_auth_proto_depIdxs = []int32{
 	4, // 0: rpc.auth.AuthService.Authenticate:input_type -> rpc.auth.AuthenticateRequest
 	2, // 1: rpc.auth.AuthService.Register:input_type -> rpc.auth.RegisterRequest
 	0, // 2: rpc.auth.AuthService.Login:input_type -> rpc.auth.LoginRequest
@@ -475,13 +475,13 @@ var file_src_idl_auto_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_src_idl_auto_proto_init() }
-func file_src_idl_auto_proto_init() {
-	if File_src_idl_auto_proto != nil {
+func init() { file_src_idl_auth_proto_init() }
+func file_src_idl_auth_proto_init() {
+	if File_src_idl_auth_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_src_idl_auto_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_src_idl_auth_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*LoginRequest); i {
 			case 0:
 				return &v.state
@@ -493,7 +493,7 @@ func file_src_idl_auto_proto_init() {
 				return nil
 			}
 		}
-		file_src_idl_auto_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_src_idl_auth_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*LoginResponse); i {
 			case 0:
 				return &v.state
@@ -505,7 +505,7 @@ func file_src_idl_auto_proto_init() {
 				return nil
 			}
 		}
-		file_src_idl_auto_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_src_idl_auth_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RegisterRequest); i {
 			case 0:
 				return &v.state
@@ -517,7 +517,7 @@ func file_src_idl_auto_proto_init() {
 				return nil
 			}
 		}
-		file_src_idl_auto_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_src_idl_auth_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RegisterResponse); i {
 			case 0:
 				return &v.state
@@ -529,7 +529,7 @@ func file_src_idl_auto_proto_init() {
 				return nil
 			}
 		}
-		file_src_idl_auto_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_src_idl_auth_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AuthenticateRequest); i {
 			case 0:
 				return &v.state
@@ -541,7 +541,7 @@ func file_src_idl_auto_proto_init() {
 				return nil
 			}
 		}
-		file_src_idl_auto_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_src_idl_auth_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AuthenticateResponse); i {
 			case 0:
 				return &v.state
@@ -558,18 +558,18 @@ func file_src_idl_auto_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_src_idl_auto_proto_rawDesc,
+			RawDescriptor: file_src_idl_auth_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_src_idl_auto_proto_goTypes,
-		DependencyIndexes: file_src_idl_auto_proto_depIdxs,
-		MessageInfos:      file_src_idl_auto_proto_msgTypes,
+		GoTypes:           file_src_idl_auth_proto_goTypes,
+		DependencyIndexes: file_src_idl_auth_proto_depIdxs,
+		MessageInfos:      file_src_idl_auth_proto_msgTypes,
 	}.Build()
-	File_src_idl_auto_proto = out.File
-	file_src_idl_auto_proto_rawDesc = nil
-	file_src_idl_auto_proto_goTypes = nil
-	file_src_idl_auto_proto_depIdxs = nil
+	File_src_idl_auth_proto = out.File
+	file_src_idl_auth_proto_rawDesc = nil
+	file_src_idl_auth_proto_goTypes = nil
+	file_src_idl_auth_proto_depIdxs = nil
 }
