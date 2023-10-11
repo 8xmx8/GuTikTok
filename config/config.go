@@ -64,10 +64,11 @@ type Log struct {
 	Compress             bool   `yaml:"compress"`   // 日志是否压缩
 }
 type Redis struct {
-	Host     string `yaml:"host"`
-	Port     int    `yaml:"port"`
-	Password string `yaml:"password"`
-	Db       int    `yaml:"db"`
+	Host        string `yaml:"host"`
+	Port        int    `yaml:"port"`
+	Password    string `yaml:"password"`
+	Db          int    `yaml:"db"`
+	RedisPrefix string `yaml:"RedisPrefix"`
 }
 
 func init() {
