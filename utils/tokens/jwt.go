@@ -9,17 +9,15 @@ import (
 )
 
 type MyClaims struct {
-	ID       int64  `json:"id"`
-	Username string `json:"username"`
+	ID int64 `json:"id"`
 	jwt.RegisteredClaims
 }
 
 // GetToken 生成token
-func GetToken(id int64, username string) (string, error) {
+func GetToken(id int64) (string, error) {
 	expireTime := time.Now().Add(time.Hour * 24 * 90) // 三个月过期
 	SetClaims := MyClaims{
 		id,
-		username,
 		jwt.RegisteredClaims{
 			ExpiresAt: jwt.NewNumericDate(expireTime),
 			Issuer:    "GuTikTok",

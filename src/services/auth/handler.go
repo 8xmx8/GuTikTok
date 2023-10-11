@@ -8,11 +8,11 @@ import (
 	"GuTikTok/src/rpc/auth"
 	"GuTikTok/strings"
 	"GuTikTok/utils/checks"
-	"GuTikTok/utils/tokens"
 	"GuTikTok/utils/tracing"
 	"context"
 	"fmt"
 	"github.com/bits-and-blooms/bloom/v3"
+	"github.com/google/uuid"
 	"github.com/sirupsen/logrus"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/trace"
@@ -53,7 +53,6 @@ func (a AuthServiceImpl) Authenticate(ctx context.Context, request *auth.Authent
 		return
 	}
 	id, err := strconv.ParseInt(userId, 10, 64)
-
 	if err != nil {
 		logger.WithFields(logrus.Fields{
 			"err":   err,
@@ -139,24 +138,25 @@ func (a AuthServiceImpl) Login(ctx context.Context, request *auth.LoginRequest) 
 	return nil, nil
 
 }
-func hasToken(ctx context.Context, token string) (string, bool, error) {
-	return cached.Get(ctx, "T2U"+token)
-}
-func getToken(ctx context.Context, userId int64, username string) (string, error) {
+func getToken(ctx context.Context, userId int64) (string, error) {
 	span := trace.SpanFromContext(ctx)
 	logging.SetSpanWithHostname(span)
 	logger := logging.LogService("AuthService.Login").WithContext(ctx)
 	logger.WithFields(logrus.Fields{
 		"userId": userId,
 	}).Debugf("Select for user token")
-	return cached.GetWithFunc(ctx, "U2T"+strconv.FormatInt(userId, 10)+username,
+	return cached.GetWithFunc(ctx, "U2T"+strconv.FormatInt(userId, 10),
 		func(ctx context.Context, key string) (string, error) {
 			span := trace.SpanFromContext(ctx)
-			token, _ := tokens.GetToken(userId, username)
+			token := uuid.New().String()
 			span.SetAttributes(attribute.String("token", token))
-			cached.Write(ctx, "T2U"+token, strconv.FormatInt(userId, 10)+username, true)
+			cached.Write(ctx, "T2U"+token, strconv.FormatInt(userId, 10), true)
 			return token, nil
 		})
+}
+
+func hasToken(ctx context.Context, token string) (string, bool, error) {
+	return cached.Get(ctx, "T2U"+token)
 }
 func hashPassword(ctx context.Context, password string) (string, error) {
 	_, span := tracing.Tracer.Start(ctx, "PasswordHash")
