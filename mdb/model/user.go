@@ -2,6 +2,7 @@ package model
 
 import (
 	"GuTikTok/utils"
+	"regexp"
 	"time"
 
 	"gorm.io/gorm"
@@ -46,6 +47,13 @@ type (
 )
 
 var userCountKey = make([]byte, 0, 50)
+
+// IsNameEmail 判断用户的名称是否为邮箱。
+func (u *User) IsNameEmail() bool {
+	pattern := `\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*`
+	reg := regexp.MustCompile(pattern)
+	return reg.MatchString(u.Name)
+}
 
 func (u *User) BeforeCreate(tx *gorm.DB) (err error) {
 	if u.ID == 0 {
