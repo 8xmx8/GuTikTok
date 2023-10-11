@@ -24,7 +24,7 @@ var cacheMaps = make(map[string]*cache.Cache)
 var m = new(sync.Mutex)
 
 type cachedItem interface {
-	GetID() uint32
+	GetID() int64
 	IsDirty() bool
 }
 
@@ -38,7 +38,7 @@ func ScanGet(ctx context.Context, key string, obj interface{}) (bool, error) {
 
 	c := getOrCreateCache(key)
 	wrappedObj := obj.(cachedItem)
-	key = key + strconv.FormatUint(uint64(wrappedObj.GetID()), 10)
+	key = key + strconv.FormatInt(wrappedObj.GetID(), 10)
 	if x, found := c.Get(key); found {
 		dstVal := reflect.ValueOf(obj)
 		dstVal.Elem().Set(x.(reflect.Value))
@@ -107,7 +107,7 @@ func ScanTagDelete(ctx context.Context, key string, obj interface{}) {
 
 	c := getOrCreateCache(key)
 	wrappedObj := obj.(cachedItem)
-	key = key + strconv.FormatUint(uint64(wrappedObj.GetID()), 10)
+	key = key + strconv.FormatInt(wrappedObj.GetID(), 10)
 	c.Delete(key)
 }
 
@@ -120,7 +120,7 @@ func ScanWriteCache(ctx context.Context, key string, obj interface{}, state bool
 	key = config.Conf.Redis.RedisPrefix + key
 
 	wrappedObj := obj.(cachedItem)
-	key = key + strconv.FormatUint(uint64(wrappedObj.GetID()), 10)
+	key = key + strconv.FormatInt(wrappedObj.GetID(), 10)
 	c := getOrCreateCache(key)
 	c.Set(key, reflect.ValueOf(obj).Elem(), cache.DefaultExpiration)
 
@@ -263,7 +263,7 @@ func CacheAndRedisGet(ctx context.Context, key string, obj interface{}) (bool, e
 
 	c := getOrCreateCache(key)
 	wrappedObj := obj.(cachedItem)
-	key = key + strconv.FormatUint(uint64(wrappedObj.GetID()), 10)
+	key = key + strconv.FormatInt(wrappedObj.GetID(), 10)
 	if x, found := c.Get(key); found {
 		dstVal := reflect.ValueOf(obj)
 		dstVal.Elem().Set(x.(reflect.Value))
