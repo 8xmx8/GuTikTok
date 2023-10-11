@@ -14,7 +14,7 @@ var consulClient *capi.Client
 
 func init() {
 	cfg := capi.DefaultConfig()
-	cfg.Address = config.Conf.Server.Address
+	cfg.Address = config.Conf.Consul.Address
 	if c, err := capi.NewClient(cfg); err == nil {
 		consulClient = c
 		return

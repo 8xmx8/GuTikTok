@@ -27,13 +27,13 @@ type MysqlReplica struct {
 	MySQLReplicaPassword string `yaml:"MySQLReplicaPassword"`
 }
 type Server struct {
-	IP       string `yaml:"IP"`
 	Address  string `yaml:"address"`
 	Https    bool   `yaml:"https"`    //是否启用https
 	CertFile string `yaml:"certFile"` // 证书路径
 	KeyFile  string `yaml:"keyFile"`  // 证书路径
 }
 type Consul struct {
+	Address               string `yaml:"address"`
 	ConsulAnonymityPrefix string `yaml:"consulAnonymityPrefix"`
 }
 type Tracers struct {

@@ -1,8 +1,8 @@
 jwtsecret: XFjLpUqzPbbSUHlLw
 consul:
     consulAnonymityPrefix: CONSUL_ANONYMITY_NAME
+    address: 127.0.0.1:8500
 server:
-    IP: 127.0.0.1:8500
     address: 127.0.0.1
     https: false
     certFile:
