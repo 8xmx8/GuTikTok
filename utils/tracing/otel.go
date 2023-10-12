@@ -18,13 +18,13 @@ import (
 var Tracer trace2.Tracer // 定义一个名为 Tracer 的 trace2.Tracer 类型的变量
 
 func SetTraceProvider(name string) (*trace.TracerProvider, error) {
-	// 创建一个用于发送跟踪数据的 HTTP 客户端
+	// 创建 OpenTelemetry 的 HTTP 客户端
 	client := otlptracehttp.NewClient(
 		otlptracehttp.WithEndpoint(config.Conf.Server.Address), // 将跟踪数据发送到指定的 IP 地址上的服务
 		otlptracehttp.WithInsecure(),                           // 允许不安全的连接
 	)
 
-	// 创建一个跟踪数据的导出器
+	// 创建 OpenTelemetry 的导出器（exporter）
 	exporter, err := otlptrace.New(context.Background(), client)
 	if err != nil {
 		// 如果创建导出器时发生错误，则记录日志并返回错误
@@ -44,7 +44,7 @@ func SetTraceProvider(name string) (*trace.TracerProvider, error) {
 		sampler = trace.TraceIDRatioBased(config.Conf.Tracers.OtelSampler)
 	}
 
-	// 创建一个跟踪器提供者，并配置导出器、资源和采样器参数
+	// 创建 OpenTelemetry 的跟踪提供者（tracer provider），并配置导出器、资源和采样器参数
 	tp := trace.NewTracerProvider(
 		trace.WithBatcher(exporter), // 使用导出器作为批处理器
 		trace.WithResource(
@@ -56,13 +56,13 @@ func SetTraceProvider(name string) (*trace.TracerProvider, error) {
 		trace.WithSampler(sampler), // 设置采样器
 	)
 
-	// 设置全局的跟踪器提供者
+	// 设置全局的 OpenTelemetry 跟踪提供者
 	otel.SetTracerProvider(tp)
 
 	// 设置 OpenTelemetry 的文本传播器，用于在跨系统和服务之间传递跟踪上下文信息
 	otel.SetTextMapPropagator(propagation.NewCompositeTextMapPropagator(propagation.TraceContext{}, propagation.Baggage{}))
 
-	// 为指定名称创建一个跟踪器，并将其赋值给 Tracer 变量
+	// 为指定名称创建 OpenTelemetry 的跟踪器（tracer）
 	Tracer = otel.Tracer(name)
 
 	return tp, nil // 返回跟踪器提供者和 nil 作为错误
