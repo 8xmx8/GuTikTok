@@ -51,7 +51,7 @@ func ScanGet(ctx context.Context, key string, obj interface{}) (bool, error) {
 		"key": key,
 	}).Infof("Missed local memory cached")
 
-	if err := redis.Rdb.HGetAll(ctx, key).Scan(obj); err != nil {
+	if err := redis.Client.HGetAll(ctx, key).Scan(obj); err != nil {
 		if err != redis2.Nil {
 			logger.WithFields(logrus.Fields{
 				"err": err,
@@ -76,7 +76,7 @@ func ScanGet(ctx context.Context, key string, obj interface{}) (bool, error) {
 		"key": key,
 	}).Warnf("Missed Redis Cached")
 
-	result := database.DB.WithContext(ctx).Find(obj)
+	result := database.Client.WithContext(ctx).Find(obj)
 	if result.RowsAffected == 0 {
 		logger.WithFields(logrus.Fields{
 			"key": key,
@@ -84,7 +84,7 @@ func ScanGet(ctx context.Context, key string, obj interface{}) (bool, error) {
 		return false, result.Error
 	}
 
-	if result := redis.Rdb.HSet(ctx, key, obj); result.Err() != nil {
+	if result := redis.Client.HSet(ctx, key, obj); result.Err() != nil {
 		logger.WithFields(logrus.Fields{
 			"err": result.Err(),
 			"key": key,
@@ -104,7 +104,7 @@ func ScanTagDelete(ctx context.Context, key string, obj interface{}) {
 	logging.SetSpanWithHostname(span)
 	key = config.Conf.Redis.RedisPrefix + key
 
-	redis.Rdb.HDel(ctx, key)
+	redis.Client.HDel(ctx, key)
 
 	c := getOrCreateCache(key)
 	wrappedObj := obj.(cachedItem)
@@ -126,7 +126,7 @@ func ScanWriteCache(ctx context.Context, key string, obj interface{}, state bool
 	c.Set(key, reflect.ValueOf(obj).Elem(), cache.DefaultExpiration)
 
 	if state {
-		if err = redis.Rdb.HGetAll(ctx, key).Scan(obj); err != nil {
+		if err = redis.Client.HGetAll(ctx, key).Scan(obj); err != nil {
 			logger.WithFields(logrus.Fields{
 				"err": err,
 				"key": key,
@@ -158,7 +158,7 @@ func Get(ctx context.Context, key string) (string, bool, error) {
 	}).Infof("Missed local memory cached")
 
 	var result *redis2.StringCmd
-	if result = redis.Rdb.Get(ctx, key); result.Err() != nil && result.Err() != redis2.Nil {
+	if result = redis.Client.Get(ctx, key); result.Err() != nil && result.Err() != redis2.Nil {
 		logger.WithFields(logrus.Fields{
 			"err":    result.Err(),
 			"string": key,
@@ -221,7 +221,7 @@ func Write(ctx context.Context, key string, value string, state bool) {
 	c.Set(key, value, cache.DefaultExpiration)
 
 	if state {
-		redis.Rdb.Set(ctx, key, value, 120*time.Hour+time.Duration(rand.Intn(redisRandomScope))*time.Second)
+		redis.Client.Set(ctx, key, value, 120*time.Hour+time.Duration(rand.Intn(redisRandomScope))*time.Second)
 	}
 }
 
@@ -235,7 +235,7 @@ func TagDelete(ctx context.Context, key string) {
 	c := getOrCreateCache("strings")
 	c.Delete(key)
 
-	redis.Rdb.Del(ctx, key)
+	redis.Client.Del(ctx, key)
 }
 
 func getOrCreateCache(name string) *cache.Cache {
@@ -276,7 +276,7 @@ func CacheAndRedisGet(ctx context.Context, key string, obj interface{}) (bool, e
 		"key": key,
 	}).Infof("Missed local memory cached")
 
-	if err := redis.Rdb.HGetAll(ctx, key).Scan(obj); err != nil {
+	if err := redis.Client.HGetAll(ctx, key).Scan(obj); err != nil {
 		logger.WithFields(logrus.Fields{
 			"err": err,
 			"key": key,
