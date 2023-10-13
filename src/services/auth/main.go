@@ -55,16 +55,18 @@ func main() {
 	if err != nil {
 		log.Panicf("Rpc %s listen happens error: %v", config.AuthRpcServerName, err)
 	}
-
+	// gRPC 服务器中收集和暴露指标
 	srvMetrics := grpcprom.NewServerMetrics(
 		grpcprom.WithServerHandlingTimeHistogram(
 			grpcprom.WithHistogramBuckets([]float64{0.001, 0.01, 0.1, 0.3, 0.6, 1, 3, 6, 9, 20, 30, 60, 90, 120}),
 		),
 	)
+	// 注册到 Prometheus 客户端注册器
 	reg := prom.Client
 	reg.MustRegister(srvMetrics)
 	// Create a new Bloom filter with a target false positive rate of 0.1%
 	BloomFilter = bloom.NewWithEstimates(10000000, 0.001) // assuming we have 1 million users
+
 	// Initialize BloomFilter from database
 	var users []model.User
 	userNamesResult := mdb.DB.WithContext(context.Background()).Select("name").Find(&users)
