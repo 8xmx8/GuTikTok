@@ -120,21 +120,6 @@ func (a AuthServiceImpl) Register(ctx context.Context, request *auth.RegisterReq
 		return
 	}
 
-	result = database.Client.WithContext(ctx).Create(&user)
-	if result.Error != nil {
-		logger.WithFields(logrus.Fields{
-			"err":      result.Error,
-			"username": request.Username,
-		}).Warnf("AuthService Register Action failed to response when creating user")
-		logging.SetSpanError(span, result.Error)
-
-		resp = &auth.RegisterResponse{
-			StatusCode: strings.AuthServiceInnerErrorCode,
-			StatusMsg:  strings.AuthServiceInnerError,
-		}
-		return
-	}
-
 	wg := sync.WaitGroup{}
 	wg.Add(2)
 
