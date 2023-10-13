@@ -266,14 +266,22 @@ func getAvatarByEmail(ctx context.Context, email string) string {
 	return fmt.Sprintf("https://cravatar.cn/avatar/%s?d=identicon", getEmailMD5(ctx, email))
 }
 
+// getEmailMD5 计算给定邮箱地址的 MD5 哈希值，并返回哈希值的字符串表示形式。
 func getEmailMD5(ctx context.Context, email string) (md5String string) {
+	// 创建跟踪 span，并命名为 "Auth-EmailMD5"
 	_, span := tracing.Tracer.Start(ctx, "Auth-EmailMD5")
 	defer span.End()
+	// 使用跟踪 span 设置日志记录器
 	logging.SetSpanWithHostname(span)
+	// 将邮箱地址转换为小写形式
 	lowerEmail := stringsLib.ToLower(email)
+	// 创建 MD5 哈希对象
 	hashed := md5.New()
+	// 将小写的邮箱地址转换为字节数组，并进行哈希计算
 	hashed.Write([]byte(lowerEmail))
+	// 获取计算后的 MD5 哈希值的字节数组
 	md5Bytes := hashed.Sum(nil)
+	// 将字节数组转换为十六进制字符串表示形式
 	md5String = hex.EncodeToString(md5Bytes)
 	return
 }
