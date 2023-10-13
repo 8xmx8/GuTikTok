@@ -239,18 +239,23 @@ func TagDelete(ctx context.Context, key string) {
 }
 
 func getOrCreateCache(name string) *cache.Cache {
+	// 尝试从缓存映射中获取指定名称的缓存对象
 	cc, ok := cacheMaps[name]
 	if !ok {
+		// 如果缓存对象不存在，则加锁以确保并发安全
 		m.Lock()
 		defer m.Unlock()
+		// 再次检查缓存映射，以防其他 goroutine 已经创建了缓存对象
 		cc, ok := cacheMaps[name]
 		if !ok {
+			// 创建一个新的缓存对象，并将其存储在缓存映射中
 			cc = cache.New(5*time.Minute, 10*time.Minute)
 			cacheMaps[name] = cc
 			return cc
 		}
 		return cc
 	}
+	// 如果缓存对象已存在，则直接返回
 	return cc
 }
 
