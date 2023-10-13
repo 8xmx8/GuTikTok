@@ -249,7 +249,7 @@ func getOrCreateCache(name string) *cache.Cache {
 		// 再次检查缓存映射，以防其他 goroutine 已经创建了缓存对象
 		cc, ok := cacheMaps[name]
 		if !ok {
-			// 创建一个新的缓存对象，并将其存储在缓存映射中
+			// 创建一个新的缓存对象，并将其存储在缓存映射中 过期时间: 5minute 清理间隔: 10minute
 			cc = cache.New(5*time.Minute, 10*time.Minute)
 			cacheMaps[name] = cc
 			return cc
