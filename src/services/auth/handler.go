@@ -10,6 +10,8 @@ import (
 	"GuTikTok/utils/checks"
 	"GuTikTok/utils/logging"
 	"context"
+	"crypto/md5"
+	"encoding/hex"
 	"fmt"
 	"github.com/bits-and-blooms/bloom/v3"
 	"github.com/google/uuid"
@@ -17,7 +19,11 @@ import (
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/trace"
 	"gopkg.in/hlandau/passlib.v1"
+	"io"
+	"net/http"
 	"strconv"
+	stringsLib "strings"
+	"sync"
 )
 
 var BloomFilter *bloom.BloomFilter
@@ -110,8 +116,7 @@ func (a AuthServiceImpl) Register(ctx context.Context, request *auth.RegisterReq
 			StatusCode: strings.AuthServiceInnerErrorCode,
 			StatusMsg:  strings.AuthServiceInnerError,
 		}
-		fmt.Println(hashedPassword)
-		//未完成
+
 		return
 	}
 
@@ -130,8 +135,90 @@ func (a AuthServiceImpl) Register(ctx context.Context, request *auth.RegisterReq
 		return
 	}
 
-	return
+	wg := sync.WaitGroup{}
+	wg.Add(2)
 
+	go func() {
+		defer wg.Done()
+		resp, err := http.Get("https://v1.hitokoto.cn/?c=b&encode=text")
+		_, span := tracing.Tracer.Start(ctx, "FetchSignature")
+		defer span.End()
+		logger := logging.LogService("AuthService.FetchSignature").WithContext(ctx)
+
+		if err != nil {
+			logger.WithFields(logrus.Fields{
+				"err": err,
+			}).Warnf("Can not reach hitokoto")
+			logging.SetSpanError(span, err)
+			return
+		}
+
+		if resp.StatusCode != http.StatusOK {
+			logger.WithFields(logrus.Fields{
+				"status_code": resp.StatusCode,
+			}).Warnf("Hitokoto service may be error")
+			logging.SetSpanError(span, err)
+			return
+		}
+		body, err := io.ReadAll(resp.Body)
+
+		if err != nil {
+			logger.WithFields(logrus.Fields{
+				"err": err,
+			}).Warnf("Can not decode the response body of hitokoto")
+			logging.SetSpanError(span, err)
+			return
+		}
+
+		user.Signature = string(body)
+	}()
+
+	go func() {
+		defer wg.Done()
+		user.Name = request.Username
+		if user.IsNameEmail() {
+			logger.WithFields(logrus.Fields{
+				"mail": request.Username,
+			}).Infof("Trying to get the user avatar")
+			user.Avatar = getAvatarByEmail(ctx, request.Username)
+		} else {
+			logger.WithFields(logrus.Fields{
+				"mail": request.Username,
+			}).Infof("Username is not the email, using default logic to fetch avatar")
+		}
+	}()
+
+	wg.Wait()
+
+	user.Pawd = hashedPassword
+
+	result = database.Client.WithContext(ctx).Create(&user)
+	if result.Error != nil {
+		logger.WithFields(logrus.Fields{
+			"err":      result.Error,
+			"username": request.Username,
+		}).Warnf("AuthService Register Action failed to response when creating user")
+		logging.SetSpanError(span, result.Error)
+
+		resp = &auth.RegisterResponse{
+			StatusCode: strings.AuthServiceInnerErrorCode,
+			StatusMsg:  strings.AuthServiceInnerError,
+		}
+		return
+	}
+
+	resp.Token, err = getToken(ctx, user.ID)
+
+	if err != nil {
+		resp = &auth.RegisterResponse{
+			StatusCode: strings.AuthServiceInnerErrorCode,
+			StatusMsg:  strings.AuthServiceInnerError,
+		}
+		return
+	}
+	//其他服务 --> 用户消息 { 默认添加CharGpt为好友 }
+
+	return
 }
 func (a AuthServiceImpl) Login(ctx context.Context, request *auth.LoginRequest) (resp *auth.LoginResponse, err error) {
 
@@ -172,4 +259,21 @@ func checkPasswordHash(ctx context.Context, password, hash string) bool {
 	logging.SetSpanWithHostname(span)
 	newHash, err := passlib.Verify(password, hash)
 	return err == nil && newHash == ""
+}
+func getAvatarByEmail(ctx context.Context, email string) string {
+	ctx, span := tracing.Tracer.Start(ctx, "Auth-GetAvatar")
+	defer span.End()
+	return fmt.Sprintf("https://cravatar.cn/avatar/%s?d=identicon", getEmailMD5(ctx, email))
+}
+
+func getEmailMD5(ctx context.Context, email string) (md5String string) {
+	_, span := tracing.Tracer.Start(ctx, "Auth-EmailMD5")
+	defer span.End()
+	logging.SetSpanWithHostname(span)
+	lowerEmail := stringsLib.ToLower(email)
+	hashed := md5.New()
+	hashed.Write([]byte(lowerEmail))
+	md5Bytes := hashed.Sum(nil)
+	md5String = hex.EncodeToString(md5Bytes)
+	return
 }

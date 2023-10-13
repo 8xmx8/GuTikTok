@@ -3,6 +3,8 @@ package models
 import (
 	"GuTikTok/src/storage/database"
 	"GuTikTok/utils"
+	"fmt"
+	"net/url"
 	"regexp"
 	"time"
 
@@ -69,11 +71,7 @@ func (u *User) BeforeCreate(tx *gorm.DB) (err error) {
 		u.ID = utils.GetId(2, 114514)
 	}
 	if u.Avatar == "" {
-		url := make([]byte, 0, 88)
-		url = append(url, "https://api.multiavatar.com/"...)
-		url = append(url, u.Name...)
-		url = append(url, ".png"...)
-		u.Avatar = string(url)
+		u.Avatar = fmt.Sprintf("https://api.multiavatar.com/%s.png", url.QueryEscape(u.Name))
 	}
 	if u.BackgroundImage == "" {
 		u.BackgroundImage = "https://api.paugram.com/wallpaper/"
