@@ -3,10 +3,11 @@ package main
 import (
 	"GuTikTok/config"
 	"GuTikTok/logging"
-	"GuTikTok/mdb"
-	"GuTikTok/mdb/model"
 	"GuTikTok/src/extra/profiling"
+	"GuTikTok/src/models"
 	"GuTikTok/src/rpc/auth"
+	"GuTikTok/src/storage/database"
+	"GuTikTok/src/storage/redis"
 	"GuTikTok/utils/consul"
 	"GuTikTok/utils/prom"
 	"GuTikTok/utils/tracing"
@@ -68,8 +69,8 @@ func main() {
 	BloomFilter = bloom.NewWithEstimates(10000000, 0.001) // assuming we have 1 million users
 
 	// Initialize BloomFilter from database
-	var users []model.User
-	userNamesResult := mdb.DB.WithContext(context.Background()).Select("name").Find(&users)
+	var users []models.User
+	userNamesResult := database.Client.WithContext(context.Background()).Select("name").Find(&users)
 
 	if userNamesResult.Error != nil {
 		log.Panicf("Getting user names from databse happens error: %s", userNamesResult.Error)
@@ -81,7 +82,7 @@ func main() {
 
 	// Create a go routine to receive redis message and add it to BloomFilter
 	go func() {
-		pubSub := mdb.Rdb.Subscribe(context.Background(), config.BloomRedisChannel)
+		pubSub := redis.Client.Subscribe(context.Background(), config.BloomRedisChannel)
 		defer func(pubSub *redis2.PubSub) {
 			err := pubSub.Close()
 			if err != nil {

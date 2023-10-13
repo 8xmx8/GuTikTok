@@ -1,6 +1,7 @@
-package model
+package models
 
 import (
+	"GuTikTok/src/storage/database"
 	"GuTikTok/utils"
 	"gorm.io/gorm"
 )
@@ -28,5 +29,8 @@ func (m *Message) BeforeCreate(tx *gorm.DB) (err error) {
 }
 
 func init() {
-	addMigrate(&Message{})
+	if err := database.Client.AutoMigrate(&Message{}); err != nil {
+		panic(err)
+	}
+
 }

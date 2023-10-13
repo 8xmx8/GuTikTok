@@ -2,10 +2,10 @@ package main
 
 import (
 	"GuTikTok/logging"
-	"GuTikTok/mdb"
-	"GuTikTok/mdb/model"
-	"GuTikTok/src/cached"
+	"GuTikTok/src/models"
 	"GuTikTok/src/rpc/auth"
+	"GuTikTok/src/storage/cached"
+	"GuTikTok/src/storage/database"
 	"GuTikTok/strings"
 	"GuTikTok/utils/checks"
 	"GuTikTok/utils/tracing"
@@ -89,8 +89,8 @@ func (a AuthServiceImpl) Register(ctx context.Context, request *auth.RegisterReq
 		}
 	}
 	resp = &auth.RegisterResponse{}
-	var user model.User
-	result := mdb.DB.WithContext(ctx).Limit(1).Where("name = ?", request.Username).Find(&user)
+	var user models.User
+	result := database.Client.WithContext(ctx).Limit(1).Where("name = ?", request.Username).Find(&user)
 	if result.RowsAffected != 0 {
 		resp = &auth.RegisterResponse{
 			StatusCode: strings.AuthUserExistedCode,
@@ -115,7 +115,7 @@ func (a AuthServiceImpl) Register(ctx context.Context, request *auth.RegisterReq
 		return
 	}
 
-	result = mdb.DB.WithContext(ctx).Create(&user)
+	result = database.Client.WithContext(ctx).Create(&user)
 	if result.Error != nil {
 		logger.WithFields(logrus.Fields{
 			"err":      result.Error,

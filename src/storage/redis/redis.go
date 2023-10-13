@@ -1,4 +1,4 @@
-package mdb
+package redis
 
 import (
 	"GuTikTok/config"
@@ -10,15 +10,16 @@ import (
 	"time"
 )
 
-var Rdb redis.UniversalClient //操作redis入口
+var Client redis.UniversalClient //操作redis入口
 const redisName = ""
 
 // init 初始化 Redis
 func init() {
+
 	log.Info("开始初始化 Redis 服务!")
 	rconf := config.Conf.Redis
 	redis_addr := fmt.Sprintf("%s:%d", rconf.Host, rconf.Port)
-	Rdb = redis.NewUniversalClient(&redis.UniversalOptions{
+	Client = redis.NewUniversalClient(&redis.UniversalOptions{
 		Addrs: []string{
 			redis_addr,
 		},
@@ -35,16 +36,16 @@ func init() {
 		它会自动收集有关 Redis 操作的各种指标信息，如请求计数、错误计数、响应时间等。
 		这可以帮助你实时监控 Redis 的性能和健康状况，并进行适当的调整和优化。
 	*/
-	if err := redisotel.InstrumentTracing(Rdb); err != nil {
+	if err := redisotel.InstrumentTracing(Client); err != nil {
 		panic(err)
 	}
 
-	if err := redisotel.InstrumentMetrics(Rdb); err != nil {
+	if err := redisotel.InstrumentMetrics(Client); err != nil {
 		panic(err)
 	}
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
-	_, err := Rdb.Ping(ctx).Result()
+	_, err := Client.Ping(ctx).Result()
 	if err != nil {
 		log.Fatalf("连接redis出错，错误信息：%v", err)
 	}

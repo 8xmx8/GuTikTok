@@ -1,8 +1,7 @@
-package mdb
+package database
 
 import (
 	"GuTikTok/config"
-	"GuTikTok/mdb/model"
 	"fmt"
 	log "github.com/sirupsen/logrus"
 	"gorm.io/driver/mysql"
@@ -16,7 +15,7 @@ import (
 	"time"
 )
 
-var DB *gorm.DB //操作数据库入口
+var Client *gorm.DB //操作数据库入口
 
 func init() {
 	log.Info("开始初始化 Database !")
@@ -41,7 +40,7 @@ func init() {
 		log.Fatalf("数据库日志级别不正确，可用: [silent,error,warn,info]")
 	}
 
-	DB, err = gorm.Open(dialector, &gorm.Config{
+	Client, err = gorm.Open(dialector, &gorm.Config{
 		PrepareStmt: true, //启用预编译sql
 		//日志配置后期要更改
 		Logger: logger.New(
@@ -60,10 +59,7 @@ func init() {
 	})
 	if err != nil {
 		log.Fatalf("无法连接到数据库:%s", err.Error())
-	} else {
-		model.Init(DB)
 	}
-
 	if config.Conf.MysqlReplica.MySQLReplicaState == "enable" {
 		var replicas []gorm.Dialector
 
@@ -80,7 +76,7 @@ func init() {
 		}
 
 		// 注册数据库副本和负载均衡策略
-		err := DB.Use(dbresolver.Register(dbresolver.Config{
+		err := Client.Use(dbresolver.Register(dbresolver.Config{
 			Replicas: replicas,
 			Policy:   dbresolver.RandomPolicy{},
 		}))
@@ -90,7 +86,7 @@ func init() {
 	}
 
 	// 获取数据库连接对象
-	sqlDB, err := DB.DB()
+	sqlDB, err := Client.DB()
 	if err != nil {
 		panic(err)
 	}
@@ -102,7 +98,7 @@ func init() {
 	sqlDB.SetConnMaxIdleTime(time.Hour)
 
 	// 添加追踪插件
-	if err := DB.Use(tracing.NewPlugin()); err != nil {
+	if err := Client.Use(tracing.NewPlugin()); err != nil {
 		panic(err)
 	}
 	log.Info("初始化 Database 成功!")

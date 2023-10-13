@@ -2,7 +2,7 @@ package cached
 
 import (
 	"GuTikTok/logging"
-	"GuTikTok/mdb"
+	"GuTikTok/src/storage/redis"
 	redis2 "github.com/redis/go-redis/v9"
 	"github.com/sirupsen/logrus"
 	"time"
@@ -15,7 +15,7 @@ type TimeTicker struct {
 
 func (t *TimeTicker) Start() {
 	for range t.Tick.C {
-		err := t.Work(mdb.Rdb)
+		err := t.Work(redis.Rdb)
 		if err != nil {
 			logging.Logger.WithFields(logrus.Fields{
 				"err": err,

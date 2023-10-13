@@ -1,6 +1,7 @@
-package model
+package models
 
 import (
+	"GuTikTok/src/storage/database"
 	"GuTikTok/utils"
 	"regexp"
 	"time"
@@ -55,6 +56,14 @@ func (u *User) IsNameEmail() bool {
 	return reg.MatchString(u.Name)
 }
 
+func (u *User) IsDirty() bool {
+	return u.Name != ""
+}
+
+func (u *User) GetID() int64 {
+	return u.Model.ID
+}
+
 func (u *User) BeforeCreate(tx *gorm.DB) (err error) {
 	if u.ID == 0 {
 		u.ID = utils.GetId(2, 114514)
@@ -77,6 +86,7 @@ func (u *User) AfterFind(tx *gorm.DB) (err error) {
 }
 
 func init() {
-	addMigrate(&User{}, &UserCreation{})
-
+	if err := database.Client.AutoMigrate(&User{}, &UserCreation{}); err != nil {
+		panic(err)
+	}
 }
