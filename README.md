@@ -33,6 +33,7 @@
 - GORM [(ORM)](https://gorm.io/zh_CN/)
 - MySQL [(数据库)]()
 - Redis [(缓存)]()
+- Pyroscope[(性能分析)]()
 - OpenTelemetry,VictoriaMetrics[(可观测性)]()
 - Ffmpeg[(视频处理)]()
 - Gorse[(推荐系统)]()

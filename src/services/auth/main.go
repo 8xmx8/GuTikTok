@@ -45,8 +45,8 @@ func main() {
 		}
 	}()
 
-	// 配置 Pyroscope
-	profiling.InitPyroscope("GuGoTik.AuthService")
+	// 配置 Pyroscope 性能分析
+	profiling.InitPyroscope("GuTikTok.AuthService")
 
 	// 初始化性能分析工具
 	log := logging.LogService(config.AuthRpcServerName)
