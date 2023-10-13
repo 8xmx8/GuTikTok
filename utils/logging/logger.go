@@ -28,7 +28,6 @@ func init() {
 		FullTimestamp:             true,
 		DisableQuote:              true,
 	}
-
 	log.SetFormatter(&formatter)
 	log.AddHook(logTraceHook{})
 
@@ -47,7 +46,7 @@ func init() {
 			MaxAge:     logConf.MaxAge,
 			Compress:   logConf.Compress,
 		}
-		w = io.MultiWriter(os.Stdout, w)
+		w = io.MultiWriter(w, os.Stdout)
 
 		log.SetOutput(w)
 	}

@@ -2,7 +2,7 @@ package grpc
 
 import (
 	"GuTikTok/config"
-	"GuTikTok/logging"
+	"GuTikTok/utils/logging"
 	"fmt"
 	"github.com/sirupsen/logrus"
 	"go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc"

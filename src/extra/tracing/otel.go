@@ -2,7 +2,7 @@ package tracing
 
 import (
 	"GuTikTok/config"
-	"GuTikTok/logging"
+	"GuTikTok/utils/logging"
 	"context"
 	"github.com/sirupsen/logrus"
 	"go.opentelemetry.io/otel"

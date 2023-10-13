@@ -2,15 +2,15 @@ package main
 
 import (
 	"GuTikTok/config"
-	"GuTikTok/logging"
 	"GuTikTok/src/extra/profiling"
+	"GuTikTok/src/extra/tracing"
 	"GuTikTok/src/models"
 	"GuTikTok/src/rpc/auth"
 	"GuTikTok/src/storage/database"
 	"GuTikTok/src/storage/redis"
 	"GuTikTok/utils/consul"
+	"GuTikTok/utils/logging"
 	"GuTikTok/utils/prom"
-	"GuTikTok/utils/tracing"
 	"context"
 	"github.com/bits-and-blooms/bloom/v3"
 	grpcprom "github.com/grpc-ecosystem/go-grpc-middleware/providers/prometheus"

@@ -2,7 +2,7 @@ package consul
 
 import (
 	"GuTikTok/config"
-	"GuTikTok/logging"
+	"GuTikTok/utils/logging"
 	"fmt"
 	"github.com/google/uuid"
 	capi "github.com/hashicorp/consul/api"

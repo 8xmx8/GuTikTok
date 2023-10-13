@@ -2,11 +2,11 @@ package redis
 
 import (
 	"GuTikTok/config"
+	"GuTikTok/utils/logging"
 	"context"
 	"fmt"
 	"github.com/redis/go-redis/extra/redisotel/v9"
 	"github.com/redis/go-redis/v9"
-	log "github.com/sirupsen/logrus"
 	"time"
 )
 
@@ -16,7 +16,7 @@ const redisName = ""
 // init 初始化 Redis
 func init() {
 
-	log.Info("开始初始化 Redis 服务!")
+	logging.Logger.Info("开始初始化 Redis 服务!")
 	rconf := config.Conf.Redis
 	redis_addr := fmt.Sprintf("%s:%d", rconf.Host, rconf.Port)
 	Client = redis.NewUniversalClient(&redis.UniversalOptions{
@@ -47,7 +47,7 @@ func init() {
 	defer cancel()
 	_, err := Client.Ping(ctx).Result()
 	if err != nil {
-		log.Fatalf("连接redis出错，错误信息：%v", err)
+		logging.Logger.Fatalf("连接redis出错，错误信息：%v", err)
 	}
-	log.Info("初始化 Redis 成功!")
+	logging.Logger.Info("初始化 Redis 成功!")
 }

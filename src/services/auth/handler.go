@@ -1,14 +1,14 @@
 package main
 
 import (
-	"GuTikTok/logging"
+	"GuTikTok/src/extra/tracing"
 	"GuTikTok/src/models"
 	"GuTikTok/src/rpc/auth"
 	"GuTikTok/src/storage/cached"
 	"GuTikTok/src/storage/database"
 	"GuTikTok/strings"
 	"GuTikTok/utils/checks"
-	"GuTikTok/utils/tracing"
+	"GuTikTok/utils/logging"
 	"context"
 	"fmt"
 	"github.com/bits-and-blooms/bloom/v3"

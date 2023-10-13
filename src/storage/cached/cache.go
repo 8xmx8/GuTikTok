@@ -2,10 +2,10 @@ package cached
 
 import (
 	"GuTikTok/config"
-	"GuTikTok/logging"
+	"GuTikTok/src/extra/tracing"
 	"GuTikTok/src/storage/database"
 	"GuTikTok/src/storage/redis"
-	"GuTikTok/utils/tracing"
+	"GuTikTok/utils/logging"
 	"context"
 	"github.com/patrickmn/go-cache"
 	redis2 "github.com/redis/go-redis/v9"

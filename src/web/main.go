@@ -2,10 +2,10 @@ package main
 
 import (
 	"GuTikTok/config"
-	"GuTikTok/logging"
 	"GuTikTok/src/extra/profiling"
+	"GuTikTok/src/extra/tracing"
 	"GuTikTok/src/web/middleware"
-	"GuTikTok/utils/tracing"
+	"GuTikTok/utils/logging"
 	"context"
 	"errors"
 	"github.com/gin-contrib/gzip"

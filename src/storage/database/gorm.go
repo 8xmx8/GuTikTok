@@ -2,6 +2,7 @@ package database
 
 import (
 	"GuTikTok/config"
+	"GuTikTok/utils/logging"
 	"fmt"
 	log "github.com/sirupsen/logrus"
 	"gorm.io/driver/mysql"
@@ -18,7 +19,7 @@ import (
 var Client *gorm.DB //操作数据库入口
 
 func init() {
-	log.Info("开始初始化 Database !")
+	logging.Logger.Info("开始初始化 Database !")
 	var dialector gorm.Dialector
 	var logLevel logger.LogLevel
 	var err error
@@ -101,5 +102,5 @@ func init() {
 	if err := Client.Use(tracing.NewPlugin()); err != nil {
 		panic(err)
 	}
-	log.Info("初始化 Database 成功!")
+	logging.Logger.Info("初始化 Database 成功!")
 }

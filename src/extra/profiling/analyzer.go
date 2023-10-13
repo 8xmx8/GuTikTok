@@ -2,7 +2,7 @@ package profiling
 
 import (
 	"GuTikTok/config"
-	"GuTikTok/logging"
+	"GuTikTok/utils/logging"
 	"github.com/pyroscope-io/client/pyroscope"
 	log "github.com/sirupsen/logrus"
 	"gorm.io/plugin/opentelemetry/logging/logrus"
