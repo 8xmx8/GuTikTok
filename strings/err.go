@@ -3,9 +3,9 @@ package strings
 // Bad Request
 const (
 	GateWayErrorCode       = 40001
-	GateWayError           = "GuGoTik Gateway 暂时不能处理您的请求，请稍后重试！"
+	GateWayError           = "GuTikTok Gateway 暂时不能处理您的请求，请稍后重试！"
 	GateWayParamsErrorCode = 40002
-	GateWayParamsError     = "GuGoTik Gateway 无法响应您的请求，请重启 APP 或稍后再试!"
+	GateWayParamsError     = "GuTikTok Gateway 无法响应您的请求，请重启 APP 或稍后再试!"
 )
 
 // Server Inner Error
@@ -64,7 +64,7 @@ const (
 
 // Expected Error
 const (
-	AuthInputPwdCode              = 4399
+	AuthInputPwdCode              = 43999
 	AuthInPutPwdExisted           = "密码长度在8-32之前，且至少含有数字，字母，特殊符号其中两种"
 	AuthUserExistedCode           = 10001
 	AuthUserExisted               = "用户已存在，请更换用户名或尝试登录！"

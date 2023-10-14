@@ -4,6 +4,7 @@ import (
 	"GuTikTok/config"
 	"GuTikTok/src/extra/profiling"
 	"GuTikTok/src/extra/tracing"
+	"GuTikTok/src/web/auth"
 	"GuTikTok/src/web/middleware"
 	"GuTikTok/utils/logging"
 	"context"
@@ -55,7 +56,13 @@ func main() {
 	g.GET("ping", func(c *gin.Context) {
 		c.String(http.StatusOK, "pong")
 	})
-	g.Group("/user")
+	rootPath := g.Group("/douyin")
+	user := rootPath.Group("/user")
+	{
+		user.GET("/")
+		user.POST("/login/", auth.LoginHandler)
+		user.POST("/register/", auth.RegisterHandler)
+	}
 
 	// Run Server
 	RunServer(g)
