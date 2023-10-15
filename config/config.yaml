@@ -10,7 +10,7 @@ server:
     keyFile:
 tracers:
     OtelState: disable
-    addr: 127.0.0.1
+    addr: 127.0.0.1:9090
     OtelSampler: 0.01
 pyroscope:
     PyroscopeState: enable

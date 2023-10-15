@@ -20,8 +20,8 @@ var Tracer trace2.Tracer // 定义一个名为 Tracer 的 trace2.Tracer 类型�
 func SetTraceProvider(name string) (*trace.TracerProvider, error) {
 	// 创建 OpenTelemetry 的 HTTP 客户端
 	client := otlptracehttp.NewClient(
-		otlptracehttp.WithEndpoint(config.Conf.Server.Address), // 将跟踪数据发送到指定的 IP 地址上的服务
-		otlptracehttp.WithInsecure(),                           // 允许不安全的连接
+		otlptracehttp.WithEndpoint(config.Conf.Tracers.Addr), // 将跟踪数据发送到指定的 IP 地址上的服务
+		otlptracehttp.WithInsecure(),                         // 允许不安全的连接
 	)
 
 	// 创建 OpenTelemetry 的导出器（exporter）

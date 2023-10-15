@@ -38,7 +38,8 @@ type Consul struct {
 	ConsulAnonymityPrefix string `yaml:"consulAnonymityPrefix"`
 }
 type Tracers struct {
-	OtelState   string  `yaml:"OtelState"`   //diable->禁用OpenTelemetry采样功能
+	OtelState   string  `yaml:"OtelState"` //diable->禁用OpenTelemetry采样功能
+	Addr        string  `yaml:"addr"`
 	OtelSampler float64 `yaml:"OtelSampler"` //采样比例->0.01
 }
 type Pyroscope struct { //分析器
