@@ -48,6 +48,7 @@ func main() {
 	// OpenTelemetry 监控
 	g.Use(otelgin.Middleware(config.WebServiceName))
 	// 令牌桶限流
+	g.Use(middleware.TokenAuthMiddleware())
 	g.Use(middleware.RateLimiterMiddleWare(time.Second, 1000, 1000))
 	// Configure Pyroscope 分析器
 	profiling.InitPyroscope("GuTikTok.GateWay")

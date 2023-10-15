@@ -3,13 +3,17 @@ module GuTikTok
 go 1.20
 
 require (
+	github.com/bits-and-blooms/bloom/v3 v3.5.0
 	github.com/gin-contrib/gzip v0.0.6
 	github.com/gin-gonic/gin v1.9.1
 	github.com/golang-jwt/jwt/v5 v5.0.0
 	github.com/google/uuid v1.3.0
+	github.com/grpc-ecosystem/go-grpc-middleware/providers/prometheus v1.0.0
 	github.com/hashicorp/consul/api v1.20.0
 	github.com/juju/ratelimit v1.0.2
 	github.com/natefinch/lumberjack v2.0.0+incompatible
+	github.com/oklog/run v1.1.0
+	github.com/patrickmn/go-cache v2.1.0+incompatible
 	github.com/prometheus/client_golang v1.14.0
 	github.com/pyroscope-io/client v0.7.2
 	github.com/redis/go-redis/extra/redisotel/v9 v9.0.5
@@ -26,17 +30,18 @@ require (
 	go.opentelemetry.io/otel/trace v1.19.0
 	google.golang.org/grpc v1.58.0
 	google.golang.org/protobuf v1.31.0
+	gopkg.in/hlandau/passlib.v1 v1.0.11
 	gorm.io/driver/mysql v1.5.1
 	gorm.io/gorm v1.25.4
 	gorm.io/plugin/dbresolver v1.4.7
 	gorm.io/plugin/opentelemetry v0.1.4
+
 )
 
 require (
 	github.com/armon/go-metrics v0.4.0 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/bits-and-blooms/bitset v1.9.0 // indirect
-	github.com/bits-and-blooms/bloom/v3 v3.5.0 // indirect
 	github.com/bytedance/sonic v1.9.1 // indirect
 	github.com/cenkalti/backoff/v4 v4.2.1 // indirect
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect
@@ -55,7 +60,6 @@ require (
 	github.com/goccy/go-json v0.10.2 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/google/btree v1.0.1 // indirect
-	github.com/grpc-ecosystem/go-grpc-middleware/providers/prometheus v1.0.0 // indirect
 	github.com/grpc-ecosystem/go-grpc-middleware/v2 v2.0.0-rc.3 // indirect
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.16.0 // indirect
 	github.com/hashicorp/go-cleanhttp v0.5.2 // indirect
@@ -79,8 +83,6 @@ require (
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
-	github.com/oklog/run v1.1.0 // indirect
-	github.com/patrickmn/go-cache v2.1.0+incompatible // indirect
 	github.com/pelletier/go-toml/v2 v2.0.8 // indirect
 	github.com/prometheus/client_model v0.3.0 // indirect
 	github.com/prometheus/common v0.37.0 // indirect
@@ -105,7 +107,6 @@ require (
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20230711160842-782d3b101e98 // indirect
 	gopkg.in/hlandau/easymetric.v1 v1.0.0 // indirect
 	gopkg.in/hlandau/measurable.v1 v1.0.1 // indirect
-	gopkg.in/hlandau/passlib.v1 v1.0.11 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect

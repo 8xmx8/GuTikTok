@@ -1,4 +1,5 @@
 jwtsecret: XFjLpUqzPbbSUHlLw
+AnonymityUser: 114514
 consul:
     consulAnonymityPrefix: CONSUL_ANONYMITY_NAME
     address: 127.0.0.1:8500
@@ -12,8 +13,8 @@ tracers:
     addr: 127.0.0.1
     OtelSampler: 0.01
 pyroscope:
-    PyroscopeState: disable
-    PyroscopeAddr: 127.0.0.1
+    PyroscopeState: enable
+    PyroscopeAddr: 127.0.0.1:4040
 mysql:
     logLevel: info
     charset: utf8mb4
