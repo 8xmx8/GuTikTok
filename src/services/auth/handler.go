@@ -63,7 +63,7 @@ func (a AuthServiceImpl) Authenticate(ctx context.Context, request *auth.Authent
 		logger.WithFields(logrus.Fields{
 			"err":   err,
 			"token": request.Token,
-		}).Warnf("AuthService Authenticate Action failed to response when parsering uint")
+		}).Warnf("AuthService Authenticate Action failed to response when parsering int64")
 		logging.SetSpanError(span, err)
 
 		resp = &auth.AuthenticateResponse{
