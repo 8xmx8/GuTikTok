@@ -206,9 +206,165 @@ func (a AuthServiceImpl) Register(ctx context.Context, request *auth.RegisterReq
 	return
 }
 func (a AuthServiceImpl) Login(ctx context.Context, request *auth.LoginRequest) (resp *auth.LoginResponse, err error) {
+	ctx, span := tracing.Tracer.Start(ctx, "LoginService")
+	defer span.End()
+	logging.SetSpanWithHostname(span)
+	logger := logging.LogService("AuthService.Login").WithContext(ctx)
+	logger.WithFields(logrus.Fields{
+		"username": request.Username,
+	}).Debugf("User try to log in.")
 
-	return nil, nil
+	// Check if a username might be in the filter
+	if !BloomFilter.TestString(request.Username) {
+		resp = &auth.LoginResponse{
+			StatusCode: strings.UnableToQueryUserErrorCode,
+			StatusMsg:  strings.UnableToQueryUserError,
+		}
 
+		logger.WithFields(logrus.Fields{
+			"username": request.Username,
+		}).Infof("The user is blocked by Bloom Filter")
+		return
+	}
+	resp = &auth.LoginResponse{}
+	user := models.User{
+		Name: request.Username,
+	}
+
+	ok, err := isUserVerifiedInRedis(ctx, request.Username, request.Password)
+	if err != nil {
+		resp = &auth.LoginResponse{
+			StatusCode: strings.AuthServiceInnerErrorCode,
+			StatusMsg:  strings.AuthServiceInnerError,
+		}
+		logging.SetSpanError(span, err)
+		return
+	}
+
+	if !ok {
+		result := database.Client.Where("name = ?", request.Username).WithContext(ctx).Find(&user)
+		if result.Error != nil {
+			logger.WithFields(logrus.Fields{
+				"err":      result.Error,
+				"username": request.Username,
+			}).Warnf("AuthService Login Action failed to response with inner err.")
+			logging.SetSpanError(span, result.Error)
+
+			resp = &auth.LoginResponse{
+				StatusCode: strings.AuthServiceInnerErrorCode,
+				StatusMsg:  strings.AuthServiceInnerError,
+			}
+			logging.SetSpanError(span, err)
+			return
+		}
+
+		if result.RowsAffected == 0 {
+			resp = &auth.LoginResponse{
+				StatusCode: strings.UserNotExistedCode,
+				StatusMsg:  strings.UserNotExisted,
+			}
+			return
+		}
+
+		if !checkPasswordHash(ctx, request.Password, user.Pawd) {
+			resp = &auth.LoginResponse{
+				StatusCode: strings.AuthUserLoginFailedCode,
+				StatusMsg:  strings.AuthUserLoginFailed,
+			}
+			return
+		}
+
+		hashed, errs := hashPassword(ctx, request.Password)
+		if errs != nil {
+			logger.WithFields(logrus.Fields{
+				"err":      errs,
+				"username": request.Username,
+			}).Warnf("AuthService Login Action failed to response with inner err.")
+			logging.SetSpanError(span, errs)
+
+			resp = &auth.LoginResponse{
+				StatusCode: strings.AuthServiceInnerErrorCode,
+				StatusMsg:  strings.AuthServiceInnerError,
+			}
+			logging.SetSpanError(span, err)
+			return
+		}
+
+		if err = setUserInfoToRedis(ctx, user.Name, hashed); err != nil {
+			resp = &auth.LoginResponse{
+				StatusCode: strings.AuthServiceInnerErrorCode,
+				StatusMsg:  strings.AuthServiceInnerError,
+			}
+			logging.SetSpanError(span, err)
+			return
+		}
+		cached.Write(ctx, fmt.Sprintf("UserId%s", request.Username), strconv.Itoa(int(user.ID)), true)
+
+	} else {
+		id, _, err := cached.Get(ctx, fmt.Sprintf("UserId%s", request.Username))
+		if err != nil {
+			resp = &auth.LoginResponse{
+				StatusCode: strings.AuthServiceInnerErrorCode,
+				StatusMsg:  strings.AuthServiceInnerError,
+			}
+			logging.SetSpanError(span, err)
+			return nil, err
+		}
+		uintId, _ := strconv.ParseInt(id, 10, 64)
+		user.ID = uintId
+	}
+
+	token, err := getToken(ctx, user.ID)
+
+	if err != nil {
+		resp = &auth.LoginResponse{
+			StatusCode: strings.AuthServiceInnerErrorCode,
+			StatusMsg:  strings.AuthServiceInnerError,
+		}
+		return
+	}
+
+	logger.WithFields(logrus.Fields{
+		"token":  token,
+		"userId": user.ID,
+	}).Debugf("User log in sucess !")
+	resp = &auth.LoginResponse{
+		StatusCode: strings.ServiceOKCode,
+		StatusMsg:  strings.ServiceOK,
+		UserId:     user.ID,
+		Token:      token,
+	}
+	return
+}
+func setUserInfoToRedis(ctx context.Context, username string, password string) error {
+	_, ok, err := cached.Get(ctx, "UserLog"+username)
+
+	if err != nil {
+		return err
+	}
+
+	if ok {
+		cached.TagDelete(ctx, "UserLog"+username)
+	}
+	cached.Write(ctx, "UserLog"+username, password, true)
+	return nil
+}
+func isUserVerifiedInRedis(ctx context.Context, username string, password string) (bool, error) {
+	pass, ok, err := cached.Get(ctx, "UserLog"+username)
+
+	if err != nil {
+		return false, nil
+	}
+
+	if !ok {
+		return false, nil
+	}
+
+	if checkPasswordHash(ctx, password, pass) {
+		return true, nil
+	}
+
+	return false, nil
 }
 func getToken(ctx context.Context, userId int64) (string, error) {
 	span := trace.SpanFromContext(ctx)
