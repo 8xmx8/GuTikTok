@@ -2,7 +2,7 @@ jwtsecret: XFjLpUqzPbbSUHlLw
 AnonymityUser: 114514
 consul:
     consulAnonymityPrefix: CONSUL_ANONYMITY_NAME
-    address: 127.0.0.1:8500
+    address: localhost:8500
 server:
     address: 127.0.0.1
     https: false
@@ -10,11 +10,11 @@ server:
     keyFile:
 tracers:
     OtelState: disable
-    addr: 127.0.0.1:9090
+    addr: http://localhost:14268/api/traces
     OtelSampler: 0.01
 pyroscope:
     PyroscopeState: enable
-    PyroscopeAddr: 127.0.0.1:4040
+    PyroscopeAddr: localhost:4040
 mysql:
     logLevel: info
     charset: utf8mb4
