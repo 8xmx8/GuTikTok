@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    ports:
+      - 16686:16686 # Jaeger UI 端口
+      - 6831:6831/udp # Jaeger Agent 端口
+      - 5778:5778 # Jaeger Agent HTTP 端口
+      - 14268:14268 # Jaeger Collector 端口
+      - 9411:9411 # Zipkin API 端口
+    command: [
+      "--log-level=info",
+      "--collector.zipkin.host-port=:9411",
+      "--reporter.grpc.host-port=:14250",
+      "--http-server.host-port=:5778"
+    ]
