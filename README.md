@@ -46,4 +46,15 @@
 
 ## 部署方法
 
-#### clone 项目
+#### 1. 确保以下服务为开启状态
+- Consul
+- Jaeger
+- Mysql
+- Redis
+- Pyroscope
+>  Jaeger 和 Pyroscope 推荐使用 Docker 进行部署，部署命令如下：
+>  docker run -d --name pyroscope -p 4040:4040 pyroscope/pyroscope:latest server 
+>  docker run -d --name=jaeger -p6831:6831/udp -p16686:16686 jaegertracing/all-in-one:latest
+
+#### 2. clone 项目
+> git clone git@github.com:Godvictory/GuTikTok.git
