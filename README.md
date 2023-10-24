@@ -10,16 +10,12 @@
   <h1 align="center">极简版抖音</h1>
   <p align="center">
     一个字节青训营的实战项目
-	<br />
+	<br/>
 	开始于2023.7.24 结束于2023.8.20
-
-[//]: # (    <br />)
-
-[//]: # (     <br />)
-
-[//]: # (    <a href="https://github.com/Ocyss/Douyin/issues">报告Bug</a>)
-
-[//]: # (    <a href="https://github.com/Ocyss/Douyin/issues">提出新特性</a>)
+    <br/>
+     <br/>
+    <a href="https://github.com/Godvictory/GuTikTok/issues">报告Bug</a>
+    <a href="https://github.com/Godvictory/GuTikTok/issues">提出新特性</a>
 </p>
 
 ## 技术栈
@@ -47,14 +43,21 @@
 ## 部署方法
 
 #### 1. 确保以下服务为开启状态
+
 - Consul
 - Jaeger
 - Mysql
 - Redis
 - Pyroscope
->  Jaeger 和 Pyroscope 推荐使用 Docker 进行部署，部署命令如下：
->  docker run -d --name pyroscope -p 4040:4040 pyroscope/pyroscope:latest server 
+- Prometheus
+>  Jaeger 和 Pyroscope 以及 Prometheus 推荐使用 Docker 进行部署，部署命令如下：
+> 
+>  docker run -d --name pyroscope -p 4040:4040 pyroscope/pyroscope:latest server
+>  
 >  docker run -d --name=jaeger -p6831:6831/udp -p16686:16686 jaegertracing/all-in-one:latest
+> 
+>  docker run --name prometheus -d -p 127.0.0.1:9090:9090 prom/prometheus
 
 #### 2. clone 项目
 > git clone git@github.com:Godvictory/GuTikTok.git
+
