@@ -70,6 +70,7 @@ func (a UserServiceImpl) GetUserInfo(ctx context.Context, request *user.UserRequ
 	}
 
 	var wg sync.WaitGroup
+
 	wg.Add(6)
 
 	return
