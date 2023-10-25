@@ -1,0 +1,96 @@
+syntax = "proto3";
+import "user.proto";
+package rpc.Relation;
+option go_package = "./src/rpc/relation";
+message RelationActionRequest {
+  int64 actor_id = 1; // 当前登录用户
+  int64 user_id = 2; // 对方用户id
+}
+
+message RelationActionResponse {
+  int32 status_code = 1; // 状态码，0-成功，其他值-失败
+  string status_msg = 2; // 返回状态描述
+}
+
+message FollowListRequest {
+  int64 actor_id = 1; // 当前登录用户id
+  int64 user_id = 2; // 对方用户id
+}
+
+message FollowListResponse {
+  int32 status_code = 1; // 状态码，0-成功，其他值-失败
+  string status_msg = 2; // 返回状态描述
+  repeated user.User user_list = 3; // 用户信息列表
+}
+
+message CountFollowListRequest {
+  int64 user_id = 1; // 用户id
+}
+
+message CountFollowListResponse {
+  int32 status_code = 1; // 状态码，0-成功，其他值-失败
+  string status_msg = 2; // 返回状态描述
+  uint32 count = 3; // 关注数
+}
+
+message FollowerListRequest {
+  int64 actor_id = 1; // 当前登录用户id
+  int64 user_id = 2; // 对方用户id
+}
+
+message FollowerListResponse {
+  int32 status_code = 1; // 状态码，0-成功，其他值-失败
+  string status_msg = 2; // 返回状态描述
+  repeated user.User user_list = 3; // 用户列表
+}
+
+message CountFollowerListRequest {
+  int64 user_id = 1; // 用户id
+}
+
+message CountFollowerListResponse {
+  int32 status_code = 1; // 状态码，0-成功，其他值-失败
+  string status_msg = 2; // 返回状态描述
+  uint32 count = 3; // 粉丝数
+}
+
+message FriendListRequest {
+  int64 actor_id = 1; // 当前登录用户id
+  int64 user_id = 2; // 对方用户id
+}
+
+message FriendListResponse {
+  int32 status_code = 1; // 状态码，0-成功，其他值-失败
+  string status_msg = 2; // 返回状态描述
+  repeated user.User user_list = 3; // 用户列表
+}
+
+message IsFollowRequest {
+  int64 actor_id = 1;
+  int64 user_id = 2;
+}
+
+message IsFollowResponse {
+  int32 status_code = 1; // 状态码，0-成功，其他值-失败
+  string status_msg = 2; // 返回状态描述
+  bool result = 3; // 结果
+}
+
+service RelationService {
+  rpc Follow (RelationActionRequest) returns (RelationActionResponse);
+
+  rpc Unfollow (RelationActionRequest) returns (RelationActionResponse);
+
+  rpc GetFollowList (FollowListRequest) returns (FollowListResponse);
+
+  rpc CountFollowList (CountFollowListRequest) returns (CountFollowListResponse);
+
+  rpc GetFollowerList (FollowerListRequest) returns (FollowerListResponse);
+
+  rpc CountFollowerList (CountFollowerListRequest) returns (CountFollowerListResponse);
+
+  rpc GetFriendList (FriendListRequest) returns (FriendListResponse);
+
+  rpc IsFollow (IsFollowRequest) returns (IsFollowResponse);
+}
+

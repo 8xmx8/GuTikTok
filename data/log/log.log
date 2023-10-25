@@ -24902,3 +24902,2125 @@ time=2023-10-13 20:23:15 level=info msg=初始化 Database 成功! func=GuTikTok
 2023/10/16 17:30:59 [32mD:/GoCode/GuTikTok/main.go:17
 [0m[33m[3.306ms] [34;1m[rows:1][0m INSERT INTO `user` (`created_at`,`updated_at`,`deleted_at`,`name`,`pawd`,`avatar`,`background_image`,`signature`,`work_count`,`id`) VALUES ('2023-10-16 17:30:59.681','2023-10-16 17:30:59.681',NULL,'yjy123','$s2$16384$8$1$HZRki4hWPd8x60ngDZbCAB4K$uObIHp0HkoeogR6F+0Ee9o6g1OFoLVxfkvYmwAOBdck=','https://api.multiavatar.com/yjy123.png','https://api.paugram.com/wallpaper/','此人巨懒',0,3394897319361590686)
 [36mINFO[0m[2023-10-16 17:30:59]D:/GoCode/GuTikTok/main.go:19 main.main() 创建用户成功                                        [36mHostname[0m=acer_yjy [36mPodIP[0m=127.0.0.1 [36mTied[0m=NONE
+[36mINFO[0m[2023-10-25 19:34:27]D:/GoCode/GuTikTok/src/storage/database/gorm.go:22 GuTikTok/src/storage/database.init.0() 开始初始化 Database !                              [36mHostname[0m=acer_yjy [36mPodIP[0m=127.0.0.1 [36mTied[0m=NONE
+[36mINFO[0m[2023-10-25 19:34:27]D:/GoCode/GuTikTok/src/storage/database/gorm.go:105 GuTikTok/src/storage/database.init.0() 初始化 Database 成功!                              [36mHostname[0m=acer_yjy [36mPodIP[0m=127.0.0.1 [36mTied[0m=NONE
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.764ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[9.578ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[3.596ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.528ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[1.699ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[3.315ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.621ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.519ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[2.333ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'user' AND index_name = 'idx_user_name'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.543ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.564ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'video' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.564ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[3.634ms] [34;1m[rows:-][0m SELECT * FROM `video` LIMIT 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.541ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'video' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[1.891ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'video' AND constraint_name = 'fk_video_author'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.545ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.546ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'video' AND index_name = 'idx_video_author_id'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.540ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.540ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'comment' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[1.080ms] [34;1m[rows:-][0m SELECT * FROM `comment` LIMIT 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.517ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'comment' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.548ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'comment' AND constraint_name = 'fk_user_comment'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.542ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.522ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'comment' AND constraint_name = 'fk_video_comment'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.565ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.510ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'comment' AND index_name = 'idx_comment_reply_id'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.538ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.505ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'comment' AND index_name = 'idx_uvid'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.538ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.556ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.538ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.550ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'user' AND index_name = 'idx_user_name'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.505ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.553ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'message' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.592ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[1.034ms] [34;1m[rows:-][0m SELECT * FROM `message` LIMIT 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[1.090ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'message' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.548ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'message' AND constraint_name = 'fk_message_to_user'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.506ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.620ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'message' AND constraint_name = 'fk_message_from_user'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.620ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.561ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.561ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.572ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.550ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'user' AND index_name = 'idx_user_name'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.505ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.535ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user_creation' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.542ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.691ms] [34;1m[rows:-][0m SELECT * FROM `user_creation` LIMIT 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[1.528ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user_creation' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.509ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.540ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.517ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_creation' AND constraint_name = 'fk_user_creation_video'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.545ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_creation' AND constraint_name = 'fk_user_creation_user'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'video' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.554ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT * FROM `video` LIMIT 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.553ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'video' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'video' AND constraint_name = 'fk_video_author'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.548ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.517ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'video' AND index_name = 'idx_video_author_id'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.621ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.507ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user_favorite' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.517ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.556ms] [34;1m[rows:-][0m SELECT * FROM `user_favorite` LIMIT 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.507ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user_favorite' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.558ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_favorite' AND constraint_name = 'fk_user_favorite_video'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.542ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_favorite' AND constraint_name = 'fk_user_favorite_user'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.545ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user_follow' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.696ms] [34;1m[rows:-][0m SELECT * FROM `user_follow` LIMIT 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[1.064ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user_follow' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.552ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.506ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_follow' AND constraint_name = 'fk_user_follow_user'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.539ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_follow' AND constraint_name = 'fk_user_follow_follow'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.532ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.518ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.537ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.538ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.506ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.532ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.508ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'user' AND index_name = 'idx_user_name'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.506ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.506ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'video' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT * FROM `video` LIMIT 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.555ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'video' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'video' AND constraint_name = 'fk_video_author'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.551ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.559ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'video' AND index_name = 'idx_video_author_id'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user_creation' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.051ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.509ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT * FROM `user_creation` LIMIT 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.547ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user_creation' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_creation' AND constraint_name = 'fk_user_creation_user'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.533ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.538ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_creation' AND constraint_name = 'fk_user_creation_video'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user_favorite' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.552ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.557ms] [34;1m[rows:-][0m SELECT * FROM `user_favorite` LIMIT 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.552ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user_favorite' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.528ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_favorite' AND constraint_name = 'fk_user_favorite_user'
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:34:27 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.533ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_favorite' AND constraint_name = 'fk_user_favorite_video'
+[36mINFO[0m[2023-10-25 19:34:27]D:/GoCode/GuTikTok/src/storage/redis/redis.go:19 GuTikTok/src/storage/redis.init.0() 开始初始化 Redis 服务!                               [36mHostname[0m=acer_yjy [36mPodIP[0m=127.0.0.1 [36mTied[0m=NONE
+[36mINFO[0m[2023-10-25 19:34:27]D:/GoCode/GuTikTok/src/storage/redis/redis.go:52 GuTikTok/src/storage/redis.init.0() 初始化 Redis 成功!                                 [36mHostname[0m=acer_yjy [36mPodIP[0m=127.0.0.1 [36mTied[0m=NONE
+[36mINFO[0m[2023-10-25 19:39:31]D:/GoCode/GuTikTok/src/storage/database/gorm.go:22 GuTikTok/src/storage/database.init.0() 开始初始化 Database !                              [36mHostname[0m=acer_yjy [36mPodIP[0m=127.0.0.1 [36mTied[0m=NONE
+[36mINFO[0m[2023-10-25 19:39:31]D:/GoCode/GuTikTok/src/storage/database/gorm.go:105 GuTikTok/src/storage/database.init.0() 初始化 Database 成功!                              [36mHostname[0m=acer_yjy [36mPodIP[0m=127.0.0.1 [36mTied[0m=NONE
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.550ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[1.678ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[1.626ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.538ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.505ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.661ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[1.812ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.810ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'user' AND index_name = 'idx_user_name'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.562ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.562ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'video' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.052ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.521ms] [34;1m[rows:-][0m SELECT * FROM `video` LIMIT 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'video' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.575ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[1.158ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'video' AND constraint_name = 'fk_video_author'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.563ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.515ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'video' AND index_name = 'idx_video_author_id'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.510ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.553ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'comment' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.516ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.508ms] [34;1m[rows:-][0m SELECT * FROM `comment` LIMIT 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.508ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'comment' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'comment' AND constraint_name = 'fk_video_comment'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.561ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'comment' AND constraint_name = 'fk_user_comment'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.567ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'comment' AND index_name = 'idx_uvid'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.533ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.566ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'comment' AND index_name = 'idx_comment_reply_id'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.528ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.552ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.543ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.558ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'user' AND index_name = 'idx_user_name'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.510ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.537ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'message' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.528ms] [34;1m[rows:-][0m SELECT * FROM `message` LIMIT 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.571ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'message' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'message' AND constraint_name = 'fk_message_to_user'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.547ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'message' AND constraint_name = 'fk_message_from_user'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.542ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.538ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.540ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.528ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.606ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'user' AND index_name = 'idx_user_name'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.565ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'video' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.513ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT * FROM `video` LIMIT 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.547ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'video' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.126ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.508ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'video' AND constraint_name = 'fk_video_author'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.553ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.539ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'video' AND index_name = 'idx_video_author_id'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.552ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.563ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user_favorite' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.556ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.519ms] [34;1m[rows:-][0m SELECT * FROM `user_favorite` LIMIT 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[1.062ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user_favorite' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.558ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_favorite' AND constraint_name = 'fk_user_favorite_video'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_favorite' AND constraint_name = 'fk_user_favorite_user'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.514ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user_follow' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.556ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.539ms] [34;1m[rows:-][0m SELECT * FROM `user_follow` LIMIT 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.544ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user_follow' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.560ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_follow' AND constraint_name = 'fk_user_follow_user'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.570ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.558ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_follow' AND constraint_name = 'fk_user_follow_follow'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.569ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.527ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user_creation' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.052ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.846ms] [34;1m[rows:-][0m SELECT * FROM `user_creation` LIMIT 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.527ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user_creation' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_creation' AND constraint_name = 'fk_user_creation_video'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.509ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_creation' AND constraint_name = 'fk_user_creation_user'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.558ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.607ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.517ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.537ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.563ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'user' AND index_name = 'idx_user_name'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.062ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.510ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'video' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.546ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT * FROM `video` LIMIT 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.585ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'video' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.567ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'video' AND constraint_name = 'fk_video_author'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.553ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.552ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'video' AND index_name = 'idx_video_author_id'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.546ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.538ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user_creation' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.548ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.544ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT * FROM `user_creation` LIMIT 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user_creation' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.532ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.556ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_creation' AND constraint_name = 'fk_user_creation_user'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.530ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_creation' AND constraint_name = 'fk_user_creation_video'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.550ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user_favorite' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.532ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT * FROM `user_favorite` LIMIT 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.533ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user_favorite' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.543ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.546ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_favorite' AND constraint_name = 'fk_user_favorite_user'
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:39:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.551ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_favorite' AND constraint_name = 'fk_user_favorite_video'
+[36mINFO[0m[2023-10-25 19:40:10]D:/GoCode/GuTikTok/src/storage/database/gorm.go:22 GuTikTok/src/storage/database.init.0() 开始初始化 Database !                              [36mHostname[0m=acer_yjy [36mPodIP[0m=127.0.0.1 [36mTied[0m=NONE
+[36mINFO[0m[2023-10-25 19:40:10]D:/GoCode/GuTikTok/src/storage/database/gorm.go:105 GuTikTok/src/storage/database.init.0() 初始化 Database 成功!                              [36mHostname[0m=acer_yjy [36mPodIP[0m=127.0.0.1 [36mTied[0m=NONE
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.559ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[1.820ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[1.002ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.080ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.567ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[1.642ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.850ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'user' AND index_name = 'idx_user_name'
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.569ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.553ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'video' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.551ms] [34;1m[rows:-][0m SELECT * FROM `video` LIMIT 1
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.559ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'video' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.859ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'video' AND constraint_name = 'fk_video_author'
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.561ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.557ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'video' AND index_name = 'idx_video_author_id'
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'comment' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.542ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.546ms] [34;1m[rows:-][0m SELECT * FROM `comment` LIMIT 1
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.510ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'comment' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.516ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.519ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.559ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'comment' AND constraint_name = 'fk_video_comment'
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.537ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.562ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'comment' AND constraint_name = 'fk_user_comment'
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.543ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.511ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'comment' AND index_name = 'idx_uvid'
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.533ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.546ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'comment' AND index_name = 'idx_comment_reply_id'
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.558ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.552ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.511ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.560ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'user' AND index_name = 'idx_user_name'
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'message' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.548ms] [34;1m[rows:-][0m SELECT * FROM `message` LIMIT 1
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.530ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'message' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.533ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'message' AND constraint_name = 'fk_message_from_user'
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:10 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'message' AND constraint_name = 'fk_message_to_user'
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.545ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.567ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.561ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.548ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'user' AND index_name = 'idx_user_name'
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.652ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user_follow' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.571ms] [34;1m[rows:-][0m SELECT * FROM `user_follow` LIMIT 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.509ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user_follow' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.561ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.510ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_follow' AND constraint_name = 'fk_user_follow_user'
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.567ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_follow' AND constraint_name = 'fk_user_follow_follow'
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.559ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.510ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user_creation' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.508ms] [34;1m[rows:-][0m SELECT * FROM `user_creation` LIMIT 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.511ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user_creation' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_creation' AND constraint_name = 'fk_user_creation_video'
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.604ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.508ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_creation' AND constraint_name = 'fk_user_creation_user'
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.557ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.510ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'video' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT * FROM `video` LIMIT 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.552ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'video' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.510ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'video' AND constraint_name = 'fk_video_author'
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.511ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'video' AND index_name = 'idx_video_author_id'
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user_favorite' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.601ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.518ms] [34;1m[rows:-][0m SELECT * FROM `user_favorite` LIMIT 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.511ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user_favorite' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_favorite' AND constraint_name = 'fk_user_favorite_video'
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.598ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_favorite' AND constraint_name = 'fk_user_favorite_user'
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.555ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.556ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.542ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.552ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.547ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.558ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'user' AND index_name = 'idx_user_name'
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.556ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'video' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT * FROM `video` LIMIT 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.558ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'video' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.517ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'video' AND constraint_name = 'fk_video_author'
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.518ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'video' AND index_name = 'idx_video_author_id'
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user_creation' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.573ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT * FROM `user_creation` LIMIT 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.546ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user_creation' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.555ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_creation' AND constraint_name = 'fk_user_creation_user'
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.568ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_creation' AND constraint_name = 'fk_user_creation_video'
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.059ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.531ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user_favorite' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.560ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT * FROM `user_favorite` LIMIT 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.055ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user_favorite' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_favorite' AND constraint_name = 'fk_user_favorite_user'
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:11 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.051ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_favorite' AND constraint_name = 'fk_user_favorite_video'
+[36mINFO[0m[2023-10-25 19:40:31]D:/GoCode/GuTikTok/src/storage/database/gorm.go:22 GuTikTok/src/storage/database.init.0() 开始初始化 Database !                              [36mHostname[0m=acer_yjy [36mPodIP[0m=127.0.0.1 [36mTied[0m=NONE
+[36mINFO[0m[2023-10-25 19:40:31]D:/GoCode/GuTikTok/src/storage/database/gorm.go:105 GuTikTok/src/storage/database.init.0() 初始化 Database 成功!                              [36mHostname[0m=acer_yjy [36mPodIP[0m=127.0.0.1 [36mTied[0m=NONE
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[8.884ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[1.439ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.520ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[1.118ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[1.326ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.851ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.509ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[3.265ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'user' AND index_name = 'idx_user_name'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.518ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.550ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.511ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'video' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.551ms] [34;1m[rows:-][0m SELECT * FROM `video` LIMIT 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.517ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'video' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.809ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'video' AND constraint_name = 'fk_video_author'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.517ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.507ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'video' AND index_name = 'idx_video_author_id'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.538ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'comment' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.682ms] [34;1m[rows:-][0m SELECT * FROM `comment` LIMIT 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.544ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'comment' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.551ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.549ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.508ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'comment' AND constraint_name = 'fk_video_comment'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.565ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'comment' AND constraint_name = 'fk_user_comment'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.555ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.561ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'comment' AND index_name = 'idx_uvid'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/comment.go:34
+[0m[33m[0.066ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'comment' AND index_name = 'idx_comment_reply_id'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.555ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.559ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.513ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.533ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.558ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'user' AND index_name = 'idx_user_name'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.562ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.568ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'message' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.551ms] [34;1m[rows:-][0m SELECT * FROM `message` LIMIT 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.546ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'message' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.518ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'message' AND constraint_name = 'fk_message_from_user'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/message.go:32
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'message' AND constraint_name = 'fk_message_to_user'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.534ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.552ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.548ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.554ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.517ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.549ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.549ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'user' AND index_name = 'idx_user_name'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.569ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.557ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user_creation' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.560ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.548ms] [34;1m[rows:-][0m SELECT * FROM `user_creation` LIMIT 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.552ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user_creation' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.517ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_creation' AND constraint_name = 'fk_user_creation_video'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.563ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.568ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_creation' AND constraint_name = 'fk_user_creation_user'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.577ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'video' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.551ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT * FROM `video` LIMIT 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.566ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'video' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.573ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'video' AND constraint_name = 'fk_video_author'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.701ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.509ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.560ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'video' AND index_name = 'idx_video_author_id'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.522ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.559ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user_favorite' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.558ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[1.483ms] [34;1m[rows:-][0m SELECT * FROM `user_favorite` LIMIT 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.518ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user_favorite' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_favorite' AND constraint_name = 'fk_user_favorite_video'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.539ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.529ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_favorite' AND constraint_name = 'fk_user_favorite_user'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.603ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.518ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user_follow' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.562ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.565ms] [34;1m[rows:-][0m SELECT * FROM `user_follow` LIMIT 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.565ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user_follow' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.553ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_follow' AND constraint_name = 'fk_user_follow_user'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.507ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/user.go:87
+[0m[33m[0.540ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_follow' AND constraint_name = 'fk_user_follow_follow'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.551ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[1.119ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT * FROM `user` LIMIT 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.548ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.541ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.559ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'user' AND index_name = 'idx_user_name'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.540ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'video' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.517ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT * FROM `video` LIMIT 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[1.065ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'video' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'video' AND constraint_name = 'fk_video_author'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.554ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.517ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.statistics WHERE table_schema = 'gutiktok' AND table_name = 'video' AND index_name = 'idx_video_author_id'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.551ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.545ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user_creation' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT * FROM `user_creation` LIMIT 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.563ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user_creation' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.520ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.570ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_creation' AND constraint_name = 'fk_user_creation_user'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.558ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_creation' AND constraint_name = 'fk_user_creation_video'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.527ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM information_schema.tables WHERE table_schema = 'gutiktok' AND table_name = 'user_favorite' AND table_type = 'BASE TABLE'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.526ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT * FROM `user_favorite` LIMIT 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.519ms] [34;1m[rows:-][0m SELECT column_name, column_default, is_nullable = 'YES', data_type, character_maximum_length, column_type, column_key, extra, column_comment, numeric_precision, numeric_scale , datetime_precision FROM information_schema.columns WHERE table_schema = 'gutiktok' AND table_name = 'user_favorite' ORDER BY ORDINAL_POSITION
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.564ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_favorite' AND constraint_name = 'fk_user_favorite_user'
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT DATABASE()
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.561ms] [34;1m[rows:1][0m SELECT SCHEMA_NAME from Information_schema.SCHEMATA where SCHEMA_NAME LIKE 'gutiktok%' ORDER BY SCHEMA_NAME='gutiktok' DESC,SCHEMA_NAME limit 1
+
+2023/10/25 19:40:31 [32mD:/GoCode/GuTikTok/src/models/video.go:45
+[0m[33m[0.000ms] [34;1m[rows:-][0m SELECT count(*) FROM INFORMATION_SCHEMA.table_constraints WHERE constraint_schema = 'gutiktok' AND table_name = 'user_favorite' AND constraint_name = 'fk_user_favorite_video'
