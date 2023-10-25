@@ -4,7 +4,9 @@ import (
 	"GuTikTok/config"
 	"GuTikTok/src/extra/profiling"
 	"GuTikTok/src/extra/tracing"
+	"GuTikTok/src/models"
 	"GuTikTok/src/rpc/user"
+	"GuTikTok/src/storage/database"
 	"GuTikTok/utils/consul"
 	"GuTikTok/utils/logging"
 	"GuTikTok/utils/prom"
@@ -17,6 +19,7 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/health"
 	"google.golang.org/grpc/health/grpc_health_v1"
+	"gorm.io/gorm/clause"
 	"net"
 	"net/http"
 	"os"
@@ -114,6 +117,25 @@ func main() {
 }
 
 func createMagicUser() {
-	// Create magic user: show video summary and keywords, and act as ChatGPT
+	// 创建魔法用户：显示视频摘要和关键词，并充当ChatGPT。
+	magicUser := models.User{
+		Name:            "ChatGPT",
+		Pawd:            "chatgpt",
+		Avatar:          "https://maples31-blog.oss-cn-beijing.aliyuncs.com/img/ChatGPT_logo.svg.png",
+		BackgroundImage: "https://maples31-blog.oss-cn-beijing.aliyuncs.com/img/ChatGPT.jpg",
+		Signature:       "GuGoTik 小助手",
+	}
+	result := database.Client.Clauses(clause.OnConflict{
+		Columns:   []clause.Column{{Name: "name"}},
+		DoUpdates: clause.AssignmentColumns([]string{"pawd", "avatar", "background_image", "signature"}),
+	}).Create(&magicUser)
 
+	if result.Error != nil {
+		logging.Logger.Errorf("Cannot create magic user because of %s", result.Error)
+	}
+
+	// config.EnvCfg.MagicUserId = magicUser.ID
+	logging.Logger.WithFields(logrus.Fields{
+		"MagicUserId": magicUser.ID,
+	}).Infof("Successfully create the magic user")
 }
