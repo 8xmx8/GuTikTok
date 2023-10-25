@@ -50,6 +50,8 @@
 - Redis
 - Pyroscope
 - Prometheus
+
+推荐使用docker进行部署：
 >  Jaeger 和 Pyroscope 以及 Prometheus 推荐使用 Docker 进行部署，部署命令如下：
 > 
 >  docker run -d --name pyroscope -p 4040:4040 pyroscope/pyroscope:latest server
@@ -60,4 +62,7 @@
 
 #### 2. clone 项目
 > git clone git@github.com:Godvictory/GuTikTok.git
+#### 3.项目启动
+> web端口:37000
 
+在启动web服务之前，请把所有的微服务开启
