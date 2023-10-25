@@ -1,13 +1,16 @@
 package main
 
 import (
+	"GuTikTok/config"
 	"GuTikTok/src/extra/tracing"
 	"GuTikTok/src/models"
 	"GuTikTok/src/rpc/auth"
+	user2 "GuTikTok/src/rpc/user"
 	"GuTikTok/src/storage/cached"
 	"GuTikTok/src/storage/database"
 	"GuTikTok/strings"
 	"GuTikTok/utils/checks"
+	grpc2 "GuTikTok/utils/grpc"
 	"GuTikTok/utils/logging"
 	"context"
 	"crypto/md5"
@@ -27,12 +30,16 @@ import (
 )
 
 var BloomFilter *bloom.BloomFilter
+var userClient user2.UserServiceClient
 
 type AuthServiceImpl struct {
 	auth.AuthServiceServer
 }
 
 func (a AuthServiceImpl) New() {
+
+	userRpcConn := grpc2.Connect(config.UserRpcServerName)
+	userClient = user2.NewUserServiceClient(userRpcConn)
 
 }
 func (a AuthServiceImpl) Authenticate(ctx context.Context, request *auth.AuthenticateRequest) (resp *auth.AuthenticateResponse, err error) {
