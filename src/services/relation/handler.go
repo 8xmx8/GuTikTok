@@ -7,7 +7,6 @@ import (
 	"fmt"
 )
 
-// 引入RabbitMQ
 var userClient user.UserServiceClient
 
 var actionRelationLimitKeyPrefix = config.Conf.Redis.RedisPrefix + "relation_freq_limit"
