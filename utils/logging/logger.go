@@ -70,7 +70,7 @@ func init() {
 
 	// 创建Logger实例，并设置预定义的字段值
 	Logger = log.WithFields(log.Fields{
-		"Tied":     "NONE",
+		"Tied":     config.Conf.Log.TiedLogging,
 		"Hostname": hostname,
 		"PodIP":    config.Conf.Server.Address,
 	})

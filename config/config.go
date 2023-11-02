@@ -64,6 +64,7 @@ type Log struct {
 	MaxBackups           int    `yaml:"MaxBackups"` // 日志最大备份数
 	MaxAge               int    `yaml:"MaxAge"`     // 日志最长时间
 	Compress             bool   `yaml:"compress"`   // 日志是否压缩
+	TiedLogging          string `yaml:"TiedLogging"`
 }
 type Redis struct {
 	Host        string `yaml:"host"`

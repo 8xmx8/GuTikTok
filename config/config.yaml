@@ -16,7 +16,7 @@ pyroscope:
     PyroscopeState: enable
     PyroscopeAddr: localhost:4040
 mysql:
-    logLevel: info
+    logLevel: error
     charset: utf8mb4
     database: gutiktok
     host: 127.0.0.1
@@ -29,6 +29,7 @@ MysqlReplica:
     MySQLReplicaUsername: root
     MySQLReplicaPassword: 123456
 log:
+    TiedLogging: NONE
     enable: true
     level : info
     loggerWithTraceState: enable
