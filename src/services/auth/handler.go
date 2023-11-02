@@ -5,6 +5,7 @@ import (
 	"GuTikTok/src/extra/tracing"
 	"GuTikTok/src/models"
 	"GuTikTok/src/rpc/auth"
+	"GuTikTok/src/rpc/relation"
 	user2 "GuTikTok/src/rpc/user"
 	"GuTikTok/src/storage/cached"
 	"GuTikTok/src/storage/database"
@@ -29,6 +30,7 @@ import (
 	"sync"
 )
 
+var relationClient relation.RelationServiceClient
 var BloomFilter *bloom.BloomFilter
 var userClient user2.UserServiceClient
 
@@ -37,7 +39,8 @@ type AuthServiceImpl struct {
 }
 
 func (a AuthServiceImpl) New() {
-
+	relationConn := grpc2.Connect(config.RelationRpcServerName)
+	relationClient = relation.NewRelationServiceClient(relationConn)
 	userRpcConn := grpc2.Connect(config.UserRpcServerName)
 	userClient = user2.NewUserServiceClient(userRpcConn)
 

@@ -119,6 +119,9 @@ func main() {
 func createMagicUser() {
 	// 创建魔法用户：显示视频摘要和关键词，并充当ChatGPT。
 	magicUser := models.User{
+		Model: models.Model{
+			ID: 1,
+		},
 		Name:            "ChatGPT",
 		Pawd:            "chatgpt",
 		Avatar:          "https://maples31-blog.oss-cn-beijing.aliyuncs.com/img/ChatGPT_logo.svg.png",

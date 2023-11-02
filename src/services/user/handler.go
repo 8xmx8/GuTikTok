@@ -1,11 +1,14 @@
 package main
 
 import (
+	"GuTikTok/config"
 	"GuTikTok/src/extra/tracing"
 	"GuTikTok/src/models"
+	"GuTikTok/src/rpc/relation"
 	"GuTikTok/src/rpc/user"
 	"GuTikTok/src/storage/cached"
 	"GuTikTok/strings"
+	grpc2 "GuTikTok/utils/grpc"
 	"GuTikTok/utils/logging"
 	"context"
 	"github.com/sirupsen/logrus"
@@ -16,8 +19,11 @@ type UserServiceImpl struct {
 	user.UserServiceServer
 }
 
-func (a UserServiceImpl) New() {
+var relationClient relation.RelationServiceClient
 
+func (a UserServiceImpl) New() {
+	relationConn := grpc2.Connect(config.RelationRpcServerName)
+	relationClient = relation.NewRelationServiceClient(relationConn)
 }
 
 func (a UserServiceImpl) GetUserInfo(ctx context.Context, request *user.UserRequest) (resp *user.UserResponse, err error) {
