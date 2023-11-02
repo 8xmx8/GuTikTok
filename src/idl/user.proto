@@ -1,6 +1,6 @@
 syntax = "proto3";
 package rpc.user;
-option go_package = "./src/rpc/user";
+option go_package = "GuTikTok/src/rpc/user";
 
 
 message UserRequest {
