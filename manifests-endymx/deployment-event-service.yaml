@@ -1,0 +1,74 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    sidecar.jaegertracing.io/inject: 'false'
+  labels:
+    app: gugotik-event-service
+  name: gugotik-event-service
+  namespace: gugotik-service-bundle
+spec:
+  selector:
+    matchLabels:
+      name: gugotik-event-service
+  template:
+    metadata:
+      labels:
+        app: gugotik-event-service
+        branch: master
+        version: ${BUILD_NUMBER}-${CI_COMMIT_ID}
+        name: gugotik-event-service
+        dream-app: gugotik-event-service
+        dream-unit: gugotik-event-service
+    spec:
+      imagePullSecrets:
+        -   name: regcred
+      containers:
+        -   image: ${IMAGE}
+            imagePullPolicy: IfNotPresent
+            name: gugotik-event-service
+            command:
+              - ./services/event/EventService
+            envFrom:
+              - configMapRef:
+                  name: env-config
+              - configMapRef:
+                  name: gugotik-env
+              - secretRef:
+                  name: gugotik-secret
+            volumeMounts:
+              - mountPath: /var/log/gugotik
+                name: log-volume
+            ports:
+              - name: metrics-37099
+                containerPort: 37099
+                protocol: TCP
+            resources:
+              limits:
+                cpu: 2000m
+                memory: 2048Mi
+              requests:
+                cpu: 100m
+                memory: 128Mi
+        - name: logger
+          image: fluent/fluent-bit:1.8.4
+          imagePullPolicy: IfNotPresent
+          resources:
+            requests:
+              cpu: 20m
+              memory: 100Mi
+            limits:
+              cpu: 100m
+              memory: 200Mi
+          volumeMounts:
+            - mountPath: /fluent-bit/etc
+              name: config
+            - mountPath: /var/log/gugotik
+              name: log-volume
+      volumes:
+        - name: config
+          configMap:
+            name: gugotik-log-config
+        - name: log-volume
+          emptyDir: { }
+      terminationGracePeriodSeconds: 30

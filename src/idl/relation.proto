@@ -2,9 +2,11 @@ syntax = "proto3";
 import "user.proto";
 package rpc.Relation;
 option go_package = "GuTikTok/src/rpc/relation";
+
+
 message RelationActionRequest {
-  int64 actor_id = 1; // 当前登录用户
-  int64 user_id = 2; // 对方用户id
+  uint32 actor_id = 1; // 当前登录用户
+  uint32 user_id = 2; // 对方用户id
 }
 
 message RelationActionResponse {
@@ -13,8 +15,8 @@ message RelationActionResponse {
 }
 
 message FollowListRequest {
-  int64 actor_id = 1; // 当前登录用户id
-  int64 user_id = 2; // 对方用户id
+  uint32 actor_id = 1; // 当前登录用户id
+  uint32 user_id = 2; // 对方用户id
 }
 
 message FollowListResponse {
@@ -24,7 +26,7 @@ message FollowListResponse {
 }
 
 message CountFollowListRequest {
-  int64 user_id = 1; // 用户id
+  uint32 user_id = 1; // 用户id
 }
 
 message CountFollowListResponse {
@@ -34,8 +36,8 @@ message CountFollowListResponse {
 }
 
 message FollowerListRequest {
-  int64 actor_id = 1; // 当前登录用户id
-  int64 user_id = 2; // 对方用户id
+  uint32 actor_id = 1; // 当前登录用户id
+  uint32 user_id = 2; // 对方用户id
 }
 
 message FollowerListResponse {
@@ -45,7 +47,7 @@ message FollowerListResponse {
 }
 
 message CountFollowerListRequest {
-  int64 user_id = 1; // 用户id
+  uint32 user_id = 1; // 用户id
 }
 
 message CountFollowerListResponse {
@@ -55,8 +57,8 @@ message CountFollowerListResponse {
 }
 
 message FriendListRequest {
-  int64 actor_id = 1; // 当前登录用户id
-  int64 user_id = 2; // 对方用户id
+  uint32 actor_id = 1; // 当前登录用户id
+  uint32 user_id = 2; // 对方用户id
 }
 
 message FriendListResponse {
@@ -66,8 +68,8 @@ message FriendListResponse {
 }
 
 message IsFollowRequest {
-  int64 actor_id = 1;
-  int64 user_id = 2;
+  uint32 actor_id = 1;
+  uint32 user_id = 2;
 }
 
 message IsFollowResponse {
@@ -93,4 +95,3 @@ service RelationService {
 
   rpc IsFollow (IsFollowRequest) returns (IsFollowResponse);
 }
-

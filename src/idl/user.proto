@@ -2,10 +2,9 @@ syntax = "proto3";
 package rpc.user;
 option go_package = "GuTikTok/src/rpc/user";
 
-
 message UserRequest {
-  int64 user_id = 1; // 用户id
-  int64 actor_id = 2; // 发送请求的用户的id
+  uint32 user_id = 1; // 用户id
+  uint32 actor_id = 2; // 发送请求的用户的id
 }
 
 message UserResponse {
@@ -15,7 +14,7 @@ message UserResponse {
 }
 
 message UserExistRequest {
-  int64 user_id = 1; // 用户id
+  uint32 user_id = 1; // 用户id
 }
 
 message UserExistResponse {
@@ -25,7 +24,7 @@ message UserExistResponse {
 }
 
 message User {
-  int64 id = 1; // 用户id
+  uint32 id = 1; // 用户id
   string name = 2; // 用户名称
   optional uint32 follow_count = 3; // 关注总数
   optional uint32 follower_count = 4; // 粉丝总数

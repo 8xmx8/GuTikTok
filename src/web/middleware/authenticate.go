@@ -1,13 +1,12 @@
 package middleware
 
 import (
-	"GuTikTok/config"
+	"GuTikTok/src/constant/config"
+	"GuTikTok/src/constant/strings"
 	"GuTikTok/src/extra/tracing"
 	"GuTikTok/src/rpc/auth"
-	"GuTikTok/strings"
-	grpc2 "GuTikTok/utils/grpc"
-	"GuTikTok/utils/logging"
-
+	grpc2 "GuTikTok/src/utils/grpc"
+	"GuTikTok/src/utils/logging"
 	"github.com/gin-gonic/gin"
 	"github.com/sirupsen/logrus"
 	"go.opentelemetry.io/otel/attribute"
@@ -29,7 +28,7 @@ func TokenAuthMiddleware() gin.HandlerFunc {
 			c.Request.URL.Path == "/douyin/comment/list/" ||
 			c.Request.URL.Path == "/douyin/publish/list/" ||
 			c.Request.URL.Path == "/douyin/favorite/list/" {
-			c.Request.URL.RawQuery += "&actor_id=" + config.Conf.AnonymityUser
+			c.Request.URL.RawQuery += "&actor_id=" + config.EnvCfg.AnonymityUser
 			span.SetAttributes(attribute.String("mark_url", c.Request.URL.String()))
 			logger.WithFields(logrus.Fields{
 				"Path": c.Request.URL.Path,
@@ -48,7 +47,7 @@ func TokenAuthMiddleware() gin.HandlerFunc {
 		if token == "" && (c.Request.URL.Path == "/douyin/feed/" ||
 			c.Request.URL.Path == "/douyin/relation/follow/list/" ||
 			c.Request.URL.Path == "/douyin/relation/follower/list/") {
-			c.Request.URL.RawQuery += "&actor_id=" + config.Conf.AnonymityUser
+			c.Request.URL.RawQuery += "&actor_id=" + config.EnvCfg.AnonymityUser
 			span.SetAttributes(attribute.String("mark_url", c.Request.URL.String()))
 			logger.WithFields(logrus.Fields{
 				"Path": c.Request.URL.Path,
@@ -81,7 +80,7 @@ func TokenAuthMiddleware() gin.HandlerFunc {
 			return
 		}
 
-		c.Request.URL.RawQuery += "&actor_id=" + strconv.FormatInt(authenticate.UserId, 10)
+		c.Request.URL.RawQuery += "&actor_id=" + strconv.FormatUint(uint64(authenticate.UserId), 10)
 		c.Next()
 	}
 }

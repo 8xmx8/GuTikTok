@@ -1,41 +1,23 @@
 package redis
 
 import (
-	"GuTikTok/config"
-	"GuTikTok/utils/logging"
-	"context"
-	"fmt"
+	"GuTikTok/src/constant/config"
 	"github.com/redis/go-redis/extra/redisotel/v9"
 	"github.com/redis/go-redis/v9"
-	"time"
+	"strings"
 )
 
-var Client redis.UniversalClient //操作redis入口
-const redisName = ""
+var Client redis.UniversalClient
 
-// init 初始化 Redis
 func init() {
-
-	logging.Logger.Info("开始初始化 Redis 服务!")
-	rconf := config.Conf.Redis
-	redis_addr := fmt.Sprintf("%s:%d", rconf.Host, rconf.Port)
+	addrs := strings.Split(config.EnvCfg.RedisAddr, ";")
 	Client = redis.NewUniversalClient(&redis.UniversalOptions{
-		Addrs: []string{
-			redis_addr,
-		},
-		Password:   rconf.Password,
-		DB:         rconf.Db,
-		MasterName: redisName,
+		Addrs:      addrs,
+		Password:   config.EnvCfg.RedisPassword,
+		DB:         config.EnvCfg.RedisDB,
+		MasterName: config.EnvCfg.RedisMaster,
 	})
-	/*
-		redisotel.InstrumentTracing 用于启用 Redis 客户端的追踪功能，
-		它会自动将 Redis 操作记录到追踪系统中，以便进行性能分析和故障排查。
-		这可以帮助你了解每个 Redis 操作的执行时间、调用关系和可能的问题点。
 
-		redisotel.InstrumentMetrics 用于启用 Redis 客户端的指标监控功能，
-		它会自动收集有关 Redis 操作的各种指标信息，如请求计数、错误计数、响应时间等。
-		这可以帮助你实时监控 Redis 的性能和健康状况，并进行适当的调整和优化。
-	*/
 	if err := redisotel.InstrumentTracing(Client); err != nil {
 		panic(err)
 	}
@@ -43,11 +25,4 @@ func init() {
 	if err := redisotel.InstrumentMetrics(Client); err != nil {
 		panic(err)
 	}
-	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
-	defer cancel()
-	_, err := Client.Ping(ctx).Result()
-	if err != nil {
-		logging.Logger.Fatalf("连接redis出错，错误信息：%v", err)
-	}
-	logging.Logger.Info("初始化 Redis 成功!")
 }

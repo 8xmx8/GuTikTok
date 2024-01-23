@@ -2,7 +2,7 @@ package cached
 
 import (
 	"GuTikTok/src/storage/redis"
-	"GuTikTok/utils/logging"
+	"GuTikTok/src/utils/logging"
 	redis2 "github.com/redis/go-redis/v9"
 	"github.com/sirupsen/logrus"
 	"time"

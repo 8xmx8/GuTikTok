@@ -1,8 +1,8 @@
 package profiling
 
 import (
-	"GuTikTok/config"
-	"GuTikTok/utils/logging"
+	"GuTikTok/src/constant/config"
+	"GuTikTok/src/utils/logging"
 	"github.com/pyroscope-io/client/pyroscope"
 	log "github.com/sirupsen/logrus"
 	"gorm.io/plugin/opentelemetry/logging/logrus"
@@ -11,7 +11,7 @@ import (
 )
 
 func InitPyroscope(appName string) {
-	if config.Conf.Pyroscope.PyroscopeState != "enable" {
+	if config.EnvCfg.PyroscopeState != "enable" {
 		logging.Logger.WithFields(log.Fields{
 			"appName": appName,
 		}).Infof("User close Pyroscope, the service would not run.")
@@ -23,7 +23,7 @@ func InitPyroscope(appName string) {
 
 	_, err := pyroscope.Start(pyroscope.Config{
 		ApplicationName: appName,
-		ServerAddress:   config.Conf.Pyroscope.PyroscopeAddr,
+		ServerAddress:   config.EnvCfg.PyroscopeAddr,
 		Logger:          logrus.NewWriter(),
 		Tags:            map[string]string{"hostname": os.Getenv("HOSTNAME")},
 		ProfileTypes: []pyroscope.ProfileType{

@@ -1,15 +1,15 @@
 package main
 
 import (
-	"GuTikTok/config"
+	"GuTikTok/src/constant/config"
 	"GuTikTok/src/extra/profiling"
 	"GuTikTok/src/extra/tracing"
 	"GuTikTok/src/models"
 	"GuTikTok/src/rpc/user"
 	"GuTikTok/src/storage/database"
-	"GuTikTok/utils/consul"
-	"GuTikTok/utils/logging"
-	"GuTikTok/utils/prom"
+	"GuTikTok/src/utils/consul"
+	"GuTikTok/src/utils/logging"
+	"GuTikTok/src/utils/prom"
 	"context"
 	grpcprom "github.com/grpc-ecosystem/go-grpc-middleware/providers/prometheus"
 	"github.com/oklog/run"
@@ -46,7 +46,7 @@ func main() {
 	profiling.InitPyroscope("GuGoTik.UserService")
 
 	log := logging.LogService(config.UserRpcServerName)
-	lis, err := net.Listen("tcp", config.Conf.Server.Address+config.UserRpcServerPort)
+	lis, err := net.Listen("tcp", config.EnvCfg.PodIpAddr+config.UserRpcServerPort)
 
 	if err != nil {
 		log.Panicf("Rpc %s listen happens error: %v", config.UserRpcServerName, err)
@@ -88,7 +88,7 @@ func main() {
 		log.Errorf("Rpc %s listen happens error for: %v", config.UserRpcServerName, err)
 	})
 
-	httpSrv := &http.Server{Addr: config.Conf.Server.Address + config.Metrics}
+	httpSrv := &http.Server{Addr: config.EnvCfg.PodIpAddr + config.Metrics}
 	g.Add(func() error {
 		m := http.NewServeMux()
 		m.Handle("/metrics", promhttp.HandlerFor(
@@ -117,27 +117,25 @@ func main() {
 }
 
 func createMagicUser() {
-	// 创建魔法用户：显示视频摘要和关键词，并充当ChatGPT。
+	// Create magic user: show video summary and keywords, and act as ChatGPT
 	magicUser := models.User{
-		Model: models.Model{
-			ID: 1,
-		},
-		Name:            "ChatGPT",
-		Pawd:            "chatgpt",
+		UserName:        "ChatGPT",
+		Password:        "chatgpt",
+		Role:            2,
 		Avatar:          "https://maples31-blog.oss-cn-beijing.aliyuncs.com/img/ChatGPT_logo.svg.png",
 		BackgroundImage: "https://maples31-blog.oss-cn-beijing.aliyuncs.com/img/ChatGPT.jpg",
 		Signature:       "GuGoTik 小助手",
 	}
 	result := database.Client.Clauses(clause.OnConflict{
-		Columns:   []clause.Column{{Name: "name"}},
-		DoUpdates: clause.AssignmentColumns([]string{"pawd", "avatar", "background_image", "signature"}),
+		Columns:   []clause.Column{{Name: "user_name"}},
+		DoUpdates: clause.AssignmentColumns([]string{"password", "role", "avatar", "background_image", "signature"}),
 	}).Create(&magicUser)
 
 	if result.Error != nil {
 		logging.Logger.Errorf("Cannot create magic user because of %s", result.Error)
 	}
 
-	// config.EnvCfg.MagicUserId = magicUser.ID
+	config.EnvCfg.MagicUserId = magicUser.ID
 	logging.Logger.WithFields(logrus.Fields{
 		"MagicUserId": magicUser.ID,
 	}).Infof("Successfully create the magic user")

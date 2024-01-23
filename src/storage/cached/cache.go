@@ -1,11 +1,11 @@
 package cached
 
 import (
-	"GuTikTok/config"
+	"GuTikTok/src/constant/config"
 	"GuTikTok/src/extra/tracing"
 	"GuTikTok/src/storage/database"
 	"GuTikTok/src/storage/redis"
-	"GuTikTok/utils/logging"
+	"GuTikTok/src/utils/logging"
 	"context"
 	"github.com/patrickmn/go-cache"
 	redis2 "github.com/redis/go-redis/v9"
@@ -25,7 +25,7 @@ var cacheMaps = make(map[string]*cache.Cache)
 var m = new(sync.Mutex)
 
 type cachedItem interface {
-	GetID() int64
+	GetID() uint32
 	IsDirty() bool
 }
 
@@ -35,11 +35,11 @@ func ScanGet(ctx context.Context, key string, obj interface{}) (bool, error) {
 	defer span.End()
 	logging.SetSpanWithHostname(span)
 	logger := logging.LogService("Cached.GetFromScanCache").WithContext(ctx)
-	key = config.Conf.Redis.RedisPrefix + key
+	key = config.EnvCfg.RedisPrefix + key
 
 	c := getOrCreateCache(key)
 	wrappedObj := obj.(cachedItem)
-	key = key + strconv.FormatInt(wrappedObj.GetID(), 10)
+	key = key + strconv.FormatUint(uint64(wrappedObj.GetID()), 10)
 	if x, found := c.Get(key); found {
 		dstVal := reflect.ValueOf(obj)
 		dstVal.Elem().Set(x.(reflect.Value))
@@ -102,13 +102,13 @@ func ScanTagDelete(ctx context.Context, key string, obj interface{}) {
 	ctx, span := tracing.Tracer.Start(ctx, "Cached-ScanTagDelete")
 	defer span.End()
 	logging.SetSpanWithHostname(span)
-	key = config.Conf.Redis.RedisPrefix + key
+	key = config.EnvCfg.RedisPrefix + key
 
 	redis.Client.HDel(ctx, key)
 
 	c := getOrCreateCache(key)
 	wrappedObj := obj.(cachedItem)
-	key = key + strconv.FormatInt(wrappedObj.GetID(), 10)
+	key = key + strconv.FormatUint(uint64(wrappedObj.GetID()), 10)
 	c.Delete(key)
 }
 
@@ -118,10 +118,10 @@ func ScanWriteCache(ctx context.Context, key string, obj interface{}, state bool
 	defer span.End()
 	logging.SetSpanWithHostname(span)
 	logger := logging.LogService("Cached.ScanWriteCache").WithContext(ctx)
-	key = config.Conf.Redis.RedisPrefix + key
+	key = config.EnvCfg.RedisPrefix + key
 
 	wrappedObj := obj.(cachedItem)
-	key = key + strconv.FormatInt(wrappedObj.GetID(), 10)
+	key = key + strconv.FormatUint(uint64(wrappedObj.GetID()), 10)
 	c := getOrCreateCache(key)
 	c.Set(key, reflect.ValueOf(obj).Elem(), cache.DefaultExpiration)
 
@@ -145,7 +145,7 @@ func Get(ctx context.Context, key string) (string, bool, error) {
 	defer span.End()
 	logging.SetSpanWithHostname(span)
 	logger := logging.LogService("Cached.GetFromStringCache").WithContext(ctx)
-	key = config.Conf.Redis.RedisPrefix + key
+	key = config.EnvCfg.RedisPrefix + key
 
 	c := getOrCreateCache("strings")
 	if x, found := c.Get(key); found {
@@ -215,7 +215,7 @@ func Write(ctx context.Context, key string, value string, state bool) {
 	ctx, span := tracing.Tracer.Start(ctx, "Cached-SetStringCache")
 	defer span.End()
 	logging.SetSpanWithHostname(span)
-	key = config.Conf.Redis.RedisPrefix + key
+	key = config.EnvCfg.RedisPrefix + key
 
 	c := getOrCreateCache("strings")
 	c.Set(key, value, cache.DefaultExpiration)
@@ -230,7 +230,7 @@ func TagDelete(ctx context.Context, key string) {
 	ctx, span := tracing.Tracer.Start(ctx, "Cached-DeleteStringCache")
 	defer span.End()
 	logging.SetSpanWithHostname(span)
-	key = config.Conf.Redis.RedisPrefix + key
+	key = config.EnvCfg.RedisPrefix + key
 
 	c := getOrCreateCache("strings")
 	c.Delete(key)
@@ -239,24 +239,18 @@ func TagDelete(ctx context.Context, key string) {
 }
 
 func getOrCreateCache(name string) *cache.Cache {
-
-	// 尝试从缓存映射中获取指定名称的缓存对象
 	cc, ok := cacheMaps[name]
 	if !ok {
-		// 如果缓存对象不存在，则加锁以确保并发安全
 		m.Lock()
 		defer m.Unlock()
-		// 再次检查缓存映射，以防其他 goroutine 已经创建了缓存对象
 		cc, ok := cacheMaps[name]
 		if !ok {
-			// 创建一个新的缓存对象，并将其存储在缓存映射中 过期时间: 5minute 清理间隔: 10minute
 			cc = cache.New(5*time.Minute, 10*time.Minute)
 			cacheMaps[name] = cc
 			return cc
 		}
 		return cc
 	}
-	// 如果缓存对象已存在，则直接返回
 	return cc
 }
 
@@ -266,11 +260,11 @@ func CacheAndRedisGet(ctx context.Context, key string, obj interface{}) (bool, e
 	defer span.End()
 	logging.SetSpanWithHostname(span)
 	logger := logging.LogService("CacheAndRedisGet").WithContext(ctx)
-	key = config.Conf.Redis.RedisPrefix + key
+	key = config.EnvCfg.RedisPrefix + key
 
 	c := getOrCreateCache(key)
 	wrappedObj := obj.(cachedItem)
-	key = key + strconv.FormatInt(wrappedObj.GetID(), 10)
+	key = key + strconv.FormatUint(uint64(wrappedObj.GetID()), 10)
 	if x, found := c.Get(key); found {
 		dstVal := reflect.ValueOf(obj)
 		dstVal.Elem().Set(x.(reflect.Value))

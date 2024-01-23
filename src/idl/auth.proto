@@ -10,7 +10,7 @@ message LoginRequest {
 message LoginResponse {
   int32 status_code = 1; // 状态码，0-成功，其他值-失败
   string status_msg = 2; // 返回状态描述
-  int64 user_id = 3; // 用户id
+  uint32 user_id = 3; // 用户id
   string token = 4; // 用户鉴权token
 }
 
@@ -22,7 +22,7 @@ message RegisterRequest {
 message RegisterResponse {
   int32 status_code = 1; // 状态码，0-成功，其他值-失败
   string status_msg = 2; // 返回状态描述
-  int64 user_id = 3; // 用户id
+  uint32 user_id = 3; // 用户id
   string token = 4; // 用户鉴权token
 }
 
@@ -33,7 +33,7 @@ message AuthenticateRequest {
 message AuthenticateResponse {
   int32 status_code = 1; // 状态码，0-成功，其他值-失败
   string status_msg = 2; // 返回状态描述
-  int64 user_id = 3; // 用户id
+  uint32 user_id = 3; // 用户id
 }
 
 service AuthService {
