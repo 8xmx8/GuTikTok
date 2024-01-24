@@ -10,7 +10,7 @@
   <p align="center">
     一个字节青训营的实战项目
 	<br/>
-	开始于2023.7.24 结束于2023.8.20
+	开始于2023.7 结束于2023.9
     <br/>
      <br/>
     <a href="https://github.com/8xmx8/GuTikTok/issues">报告Bug</a>
