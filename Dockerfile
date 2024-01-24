@@ -18,11 +18,11 @@ COPY . .
 RUN go mod download \
     && bash ./scripts/build-all.sh
 
-FROM docker.io/epicmo/gugotik-basic:1.3 as prod
+FROM docker.io/epicmo/gutiktok-basic:1.3 as prod
 
 ENV TZ Asia/Shanghai
 
-WORKDIR /data/apps/gugotik-service-bundle
+WORKDIR /data/apps/gutiktok-service-bundle
 
 RUN apk update --no-cache \
     && apk upgrade
