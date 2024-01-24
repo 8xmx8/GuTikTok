@@ -4,40 +4,40 @@ metadata:
   annotations:
     sidecar.jaegertracing.io/inject: 'false'
   labels:
-    app: gugotik-feed-service
-  name: gugotik-feed-service
-  namespace: gugotik-service-bundle
+    app: gutiktok-feed-service
+  name: gutiktok-feed-service
+  namespace: gutiktok-service-bundle
 spec:
   selector:
     matchLabels:
-      name: gugotik-feed-service
+      name: gutiktok-feed-service
   template:
     metadata:
       labels:
-        app: gugotik-feed-service
+        app: gutiktok-feed-service
         branch: master
         version: ${BUILD_NUMBER}-${CI_COMMIT_ID}
-        name: gugotik-feed-service
-        dream-app: gugotik-feed-service
-        dream-unit: gugotik-feed-service
+        name: gutiktok-feed-service
+        dream-app: gutiktok-feed-service
+        dream-unit: gutiktok-feed-service
     spec:
       imagePullSecrets:
         -   name: regcred
       containers:
         -   image: ${IMAGE}
             imagePullPolicy: IfNotPresent
-            name: gugotik-feed-service
+            name: gutiktok-feed-service
             command:
               - ./services/feed/FeedService
             envFrom:
               - configMapRef:
                   name: env-config
               - configMapRef:
-                  name: gugotik-env
+                  name: gutiktok-env
               - secretRef:
-                  name: gugotik-secret
+                  name: gutiktok-secret
             volumeMounts:
-              - mountPath: /var/log/gugotik
+              - mountPath: /var/log/gutiktok
                 name: log-volume
             ports:
               - name: grpc-37004
@@ -66,12 +66,12 @@ spec:
           volumeMounts:
             - mountPath: /fluent-bit/etc
               name: config
-            - mountPath: /var/log/gugotik
+            - mountPath: /var/log/gutiktok
               name: log-volume
       volumes:
         - name: config
           configMap:
-            name: gugotik-log-config
+            name: gutiktok-log-config
         - name: log-volume
           emptyDir: { }
       terminationGracePeriodSeconds: 30

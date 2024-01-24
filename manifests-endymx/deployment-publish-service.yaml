@@ -4,22 +4,22 @@ metadata:
   annotations:
     sidecar.jaegertracing.io/inject: 'false'
   labels:
-    app: gugotik-publish-service
-  name: gugotik-publish-service
-  namespace: gugotik-service-bundle
+    app: gutiktok-publish-service
+  name: gutiktok-publish-service
+  namespace: gutiktok-service-bundle
 spec:
   selector:
     matchLabels:
-      name: gugotik-publish-service
+      name: gutiktok-publish-service
   template:
     metadata:
       labels:
-        app: gugotik-publish-service
+        app: gutiktok-publish-service
         branch: master
         version: ${BUILD_NUMBER}-${CI_COMMIT_ID}
-        name: gugotik-publish-service
-        dream-app: gugotik-publish-service
-        dream-unit: gugotik-publish-service
+        name: gutiktok-publish-service
+        dream-app: gutiktok-publish-service
+        dream-unit: gutiktok-publish-service
     spec:
       volumes:
         - name: volume
@@ -27,7 +27,7 @@ spec:
             claimName: storage
         - name: config
           configMap:
-            name: gugotik-log-config
+            name: gutiktok-log-config
         - name: log-volume
           emptyDir: { }
       imagePullSecrets:
@@ -35,16 +35,16 @@ spec:
       containers:
         -   image: ${IMAGE}
             imagePullPolicy: IfNotPresent
-            name: gugotik-publish-service
+            name: gutiktok-publish-service
             command:
               - ./services/publish/PublishService
             envFrom:
               -   configMapRef:
                     name: env-config
               - configMapRef:
-                  name: gugotik-env
+                  name: gutiktok-env
               - secretRef:
-                  name: gugotik-secret
+                  name: gutiktok-secret
             ports:
               - name: grpc-37005
                 containerPort: 37005
@@ -60,9 +60,9 @@ spec:
                 cpu: 100m
                 memory: 128Mi
             volumeMounts:
-              - mountPath: /data/apps/gugotik-service-bundle/data
+              - mountPath: /data/apps/gutiktok-service-bundle/data
                 name: volume
-              - mountPath: /var/log/gugotik
+              - mountPath: /var/log/gutiktok
                 name: log-volume
         - name: logger
           image: fluent/fluent-bit:1.8.4
@@ -77,6 +77,6 @@ spec:
           volumeMounts:
             - mountPath: /fluent-bit/etc
               name: config
-            - mountPath: /var/log/gugotik
+            - mountPath: /var/log/gutiktok
               name: log-volume
       terminationGracePeriodSeconds: 30

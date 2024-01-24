@@ -2,9 +2,9 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: gugotik-http-service
-  name: gugotik-http-service
-  namespace: gugotik-service-bundle
+    app: gutiktok-http-service
+  name: gutiktok-http-service
+  namespace: gutiktok-service-bundle
 spec:
   ports:
     - name: http
@@ -12,6 +12,6 @@ spec:
       protocol: TCP
       targetPort: 37000
   selector:
-    name: gugotik-http-service
+    name: gutiktok-http-service
     branch: master
   type: ClusterIP

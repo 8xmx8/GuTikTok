@@ -4,38 +4,38 @@ metadata:
   annotations:
     sidecar.jaegertracing.io/inject: 'false'
   labels:
-    app: gugotik-auth-service
-  name: gugotik-auth-service
-  namespace: gugotik-service-bundle
+    app: gutiktok-auth-service
+  name: gutiktok-auth-service
+  namespace: gutiktok-service-bundle
 spec:
   selector:
     matchLabels:
-      name: gugotik-auth-service
+      name: gutiktok-auth-service
   template:
     metadata:
       labels:
-        app: gugotik-auth-service
+        app: gutiktok-auth-service
         branch: master
         version: ${BUILD_NUMBER}-${CI_COMMIT_ID}
-        name: gugotik-auth-service
-        dream-app: gugotik-auth-service
-        dream-unit: gugotik-auth-service
+        name: gutiktok-auth-service
+        dream-app: gutiktok-auth-service
+        dream-unit: gutiktok-auth-service
     spec:
       imagePullSecrets:
         -  name: regcred
       containers:
         - image: ${IMAGE}
           imagePullPolicy: IfNotPresent
-          name: gugotik-auth-service
+          name: gutiktok-auth-service
           command:
             - ./services/auth/AuthService
           envFrom:
             - configMapRef:
                 name: env-config
             - configMapRef:
-                name: gugotik-env
+                name: gutiktok-env
             - secretRef:
-                name: gugotik-secret
+                name: gutiktok-secret
           ports:
             - name: grpc-37001
               containerPort: 37001
@@ -44,7 +44,7 @@ spec:
               containerPort: 37099
               protocol: TCP
           volumeMounts:
-            - mountPath: /var/log/gugotik
+            - mountPath: /var/log/gutiktok
               name: log-volume
           resources:
             limits:
@@ -66,12 +66,12 @@ spec:
           volumeMounts:
             - mountPath: /fluent-bit/etc
               name: config
-            - mountPath: /var/log/gugotik
+            - mountPath: /var/log/gutiktok
               name: log-volume
       volumes:
         - name: config
           configMap:
-            name: gugotik-log-config
+            name: gutiktok-log-config
         - name: log-volume
           emptyDir: { }
       terminationGracePeriodSeconds: 30

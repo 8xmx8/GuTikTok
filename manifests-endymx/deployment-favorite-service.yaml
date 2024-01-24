@@ -4,40 +4,40 @@ metadata:
   annotations:
     sidecar.jaegertracing.io/inject: 'false'
   labels:
-    app: gugotik-favorite-service
-  name: gugotik-favorite-service
-  namespace: gugotik-service-bundle
+    app: gutiktok-favorite-service
+  name: gutiktok-favorite-service
+  namespace: gutiktok-service-bundle
 spec:
   selector:
     matchLabels:
-      name: gugotik-favorite-service
+      name: gutiktok-favorite-service
   template:
     metadata:
       labels:
-        app: gugotik-favorite-service
+        app: gutiktok-favorite-service
         branch: master
         version: ${BUILD_NUMBER}-${CI_COMMIT_ID}
-        name: gugotik-favorite-service
-        dream-app: gugotik-favorite-service
-        dream-unit: gugotik-favorite-service
+        name: gutiktok-favorite-service
+        dream-app: gutiktok-favorite-service
+        dream-unit: gutiktok-favorite-service
     spec:
       imagePullSecrets:
         -   name: regcred
       containers:
         -   image: ${IMAGE}
             imagePullPolicy: IfNotPresent
-            name: gugotik-favorite-service
+            name: gutiktok-favorite-service
             command:
               - ./services/favorite/FavoriteService
             envFrom:
               -   configMapRef:
                     name: env-config
               - configMapRef:
-                  name: gugotik-env
+                  name: gutiktok-env
               - secretRef:
-                  name: gugotik-secret
+                  name: gutiktok-secret
             volumeMounts:
-              - mountPath: /var/log/gugotik
+              - mountPath: /var/log/gutiktok
                 name: log-volume
             ports:
               - name: grpc-37006
@@ -66,12 +66,12 @@ spec:
           volumeMounts:
             - mountPath: /fluent-bit/etc
               name: config
-            - mountPath: /var/log/gugotik
+            - mountPath: /var/log/gutiktok
               name: log-volume
       volumes:
         - name: config
           configMap:
-            name: gugotik-log-config
+            name: gutiktok-log-config
         - name: log-volume
           emptyDir: { }
       terminationGracePeriodSeconds: 30

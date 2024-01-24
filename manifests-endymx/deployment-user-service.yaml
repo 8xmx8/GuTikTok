@@ -4,40 +4,40 @@ metadata:
   annotations:
     sidecar.jaegertracing.io/inject: 'false'
   labels:
-    app: gugotik-user-service
-  name: gugotik-user-service
-  namespace: gugotik-service-bundle
+    app: gutiktok-user-service
+  name: gutiktok-user-service
+  namespace: gutiktok-service-bundle
 spec:
   selector:
     matchLabels:
-      name: gugotik-user-service
+      name: gutiktok-user-service
   template:
     metadata:
       labels:
-        app: gugotik-user-service
+        app: gutiktok-user-service
         branch: master
         version: ${BUILD_NUMBER}-${CI_COMMIT_ID}
-        name: gugotik-user-service
-        dream-app: gugotik-user-service
-        dream-unit: gugotik-user-service
+        name: gutiktok-user-service
+        dream-app: gutiktok-user-service
+        dream-unit: gutiktok-user-service
     spec:
       imagePullSecrets:
         -   name: regcred
       containers:
         -   image: ${IMAGE}
             imagePullPolicy: IfNotPresent
-            name: gugotik-user-service
+            name: gutiktok-user-service
             command:
               - ./services/user/UserService
             envFrom:
               -   configMapRef:
                     name: env-config
               - configMapRef:
-                  name: gugotik-env
+                  name: gutiktok-env
               - secretRef:
-                  name: gugotik-secret
+                  name: gutiktok-secret
             volumeMounts:
-              - mountPath: /var/log/gugotik
+              - mountPath: /var/log/gutiktok
                 name: log-volume
             ports:
               - name: grpc-37002
@@ -66,12 +66,12 @@ spec:
           volumeMounts:
             - mountPath: /fluent-bit/etc
               name: config
-            - mountPath: /var/log/gugotik
+            - mountPath: /var/log/gutiktok
               name: log-volume
       volumes:
         - name: config
           configMap:
-            name: gugotik-log-config
+            name: gutiktok-log-config
         - name: log-volume
           emptyDir: { }
       terminationGracePeriodSeconds: 30
