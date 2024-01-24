@@ -69,7 +69,7 @@
 │  │  ├─auth # Auth 鉴权 / 登录服务
 │  │  └─health # *唯一一个非横向扩展服务，用于注册到其他服务中，提供 consul 健康检查的功能
 │  ├─storage # 存储模块，暂时缺少 RabbitMQ 对接模块，需要由视频相关业务开发组制作
-│  │  ├─database # 数据库模块，对接 PostgreSQL
+│  │  ├─database # 数据库模块，对接 mysql
 │  │  ├─file # 二进制存储模块，目前只有 fs 模块
 │  │  └─redis # Redis 模块，对接 Redis
 │  ├─utils # 通用问题
