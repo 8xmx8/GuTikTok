@@ -1,6 +1,6 @@
 FROM alpine
 
-WORKDIR /data/apps/gugotik-service-bundle/static
+WORKDIR /data/apps/gutiktok-service-bundle/static
 
 RUN apk update --no-cache \
     && apk upgrade \
